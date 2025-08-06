@@ -1,0 +1,151 @@
+{%- comment -%}
+  Displays content based on current locale
+  Usage: {% render 'bilingual-content', content_key: 'genuine_parts', type: 'title' %}
+  or: {% render 'bilingual-content', english: block.settings.title, arabic: 'النص العربي', type: 'title' %}
+{%- endcomment -%}
+
+{%- liquid
+  if english and arabic
+    # Direct English/Arabic content provided
+    if request.locale.iso_code == 'ar'
+      assign output_content = arabic
+    else
+      assign output_content = english
+    endif
+  elsif content_key
+    # Use predefined content based on key
+    case content_key
+      # Product page multicolumn content
+      when 'genuine_parts_title'
+        if request.locale.iso_code == 'ar'
+          assign output_content = 'قطع أصلية'
+        else
+          assign output_content = 'Genuine Parts'
+        endif
+      when 'genuine_parts_text'
+        if request.locale.iso_code == 'ar'
+          assign output_content = '<p>جميع قطع الغيار لدينا أصلية من الشركة المصنعة أو قطع بديلة عالية الجودة تلبي أو تتجاوز مواصفات الشركة المصنعة.</p>'
+        else
+          assign output_content = '<p>All our spare parts are genuine OEM or high-quality aftermarket parts that meet or exceed manufacturer specifications.</p>'
+        endif
+      when 'expert_support_title'
+        if request.locale.iso_code == 'ar'
+          assign output_content = 'دعم الخبراء'
+        else
+          assign output_content = 'Expert Support'
+        endif
+      when 'expert_support_text'
+        if request.locale.iso_code == 'ar'
+          assign output_content = '<p>خبراؤنا الفنيون متاحون لمساعدتك في العثور على القطع المناسبة وتقديم إرشادات التركيب.</p>'
+        else
+          assign output_content = '<p>Our technical experts are available to help you find the right parts and provide installation guidance.</p>'
+        endif
+      
+      # Homepage content
+      when 'image_banner_heading'
+        if request.locale.iso_code == 'ar'
+          assign output_content = 'قطع غيار عالية الجودة'
+        else
+          assign output_content = 'High Quality Spare Parts'
+        endif
+      when 'image_banner_text'
+        if request.locale.iso_code == 'ar'
+          assign output_content = 'اكتشف مجموعتنا الواسعة من قطع الغيار الأصلية والبديلة لجميع أنواع المركبات'
+        else
+          assign output_content = 'Discover our wide range of genuine and aftermarket spare parts for all vehicle types'
+        endif
+      when 'shop_all_button'
+        if request.locale.iso_code == 'ar'
+          assign output_content = 'تسوق الكل'
+        else
+          assign output_content = 'Shop all'
+        endif
+      
+      when 'talk_about_brand_heading'
+        if request.locale.iso_code == 'ar'
+          assign output_content = 'نبذة عن متجرنا'
+        else
+          assign output_content = 'Talk about your brand'
+        endif
+      when 'talk_about_brand_text'
+        if request.locale.iso_code == 'ar'
+          assign output_content = '<p>نحن متخصصون في توفير قطع غيار السيارات عالية الجودة بأسعار تنافسية. نضمن لك الحصول على القطع المناسبة لسيارتك مع خدمة عملاء ممتازة وشحن سريع.</p>'
+        else
+          assign output_content = '<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>'
+        endif
+      
+      when 'featured_products_title'
+        if request.locale.iso_code == 'ar'
+          assign output_content = 'المنتجات المميزة'
+        else
+          assign output_content = 'Featured products'
+        endif
+      
+      when 'multimedia_collage_heading'
+        if request.locale.iso_code == 'ar'
+          assign output_content = 'مجموعة الوسائط المتعددة'
+        else
+          assign output_content = 'Multimedia collage'
+        endif
+      
+      # Multicolumn default content
+      when 'column_title'
+        if request.locale.iso_code == 'ar'
+          assign output_content = 'عنوان العمود'
+        else
+          assign output_content = 'Column'
+        endif
+      when 'column_text'
+        if request.locale.iso_code == 'ar'
+          assign output_content = '<p>اجمع النص مع صورة للتركيز على المنتج أو المجموعة أو منشور المدونة المختار. أضف تفاصيل حول التوفر أو النمط أو حتى قدم مراجعة.</p>'
+        else
+          assign output_content = '<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>'
+        endif
+      
+      # Related products
+      when 'compatible_parts_heading'
+        if request.locale.iso_code == 'ar'
+          assign output_content = 'قطع متوافقة'
+        else
+          assign output_content = 'Compatible Parts'
+        endif
+      
+      # Product collapsible tabs
+      when 'specifications_tab'
+        if request.locale.iso_code == 'ar'
+          assign output_content = 'المواصفات'
+        else
+          assign output_content = 'Specifications'
+        endif
+      when 'compatibility_tab'
+        if request.locale.iso_code == 'ar'
+          assign output_content = 'التوافق'
+        else
+          assign output_content = 'Compatibility'
+        endif
+      when 'installation_guide_tab'
+        if request.locale.iso_code == 'ar'
+          assign output_content = 'دليل التركيب'
+        else
+          assign output_content = 'Installation Guide'
+        endif
+      when 'warranty_support_tab'
+        if request.locale.iso_code == 'ar'
+          assign output_content = 'الضمان والدعم'
+        else
+          assign output_content = 'Warranty & Support'
+        endif
+      
+      else
+        assign output_content = content_key
+    endcase
+  endif
+-%}
+
+{%- if type == 'title' -%}
+  {{ output_content }}
+{%- elsif type == 'html' -%}
+  {{ output_content }}
+{%- else -%}
+  {{ output_content | escape }}
+{%- endif -%}

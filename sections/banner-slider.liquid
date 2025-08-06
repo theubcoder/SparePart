@@ -1,0 +1,510 @@
+{{ 'section-image-banner.css' | asset_url | stylesheet_tag }}
+{{ 'component-slider.css' | asset_url | stylesheet_tag }}
+
+<style>
+  .banner-slider-section {
+    width: 100%;
+  }
+
+  .banner-slider-container {
+    width: 100%;
+  }
+
+  .banner-slider-container.page-width {
+    margin: 0 auto;
+    max-width: var(--page-width);
+    padding: 0 1.5rem;
+  }
+
+  @media screen and (min-width: 750px) {
+    .banner-slider-container.page-width {
+      padding: 0 5rem;
+    }
+  }
+
+  @media screen and (min-width: 990px) {
+    .banner-slider-container.page-width {
+      padding: 0 5rem;
+    }
+  }
+
+  @media screen and (min-width: 1200px) {
+    .banner-slider-container.page-width {
+      padding: 0;
+      max-width: var(--page-width);
+    }
+  }
+
+  .banner-slider {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: var(--media-radius);
+  }
+
+  .banner-slider-container.page-width .banner-slider {
+    border-radius: var(--media-radius);
+  }
+
+  .banner-slider__wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
+  .banner-slider__slide {
+    width: 100%;
+    display: none;
+    position: relative;
+  }
+
+  .banner-slider__slide.active {
+    display: block;
+  }
+
+  .banner-slider__slide img {
+    width: 100%;
+    height: auto;
+    display: block;
+    max-width: 100%;
+  }
+
+  .banner-slider__link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+  }
+
+  .banner-slider__nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    transition: background 0.3s ease;
+  }
+
+  .banner-slider__nav:hover {
+    background: rgba(255, 255, 255, 1);
+  }
+
+  .banner-slider__nav--prev {
+    left: 20px;
+  }
+
+  .banner-slider__nav--next {
+    right: 20px;
+  }
+
+  [dir="rtl"] .banner-slider__nav--prev {
+    left: auto;
+    right: 20px;
+  }
+
+  [dir="rtl"] .banner-slider__nav--next {
+    right: auto;
+    left: 20px;
+  }
+
+  .banner-slider__nav svg {
+    width: 20px;
+    height: 20px;
+    fill: #333;
+  }
+
+  [dir="rtl"] .banner-slider__nav--prev svg,
+  [dir="rtl"] .banner-slider__nav--next svg {
+    transform: rotate(180deg);
+  }
+
+  .banner-slider__dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 10;
+  }
+
+  .banner-slider__dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    border: 2px solid #fff;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+
+  .banner-slider__dot.active {
+    background: #fff;
+  }
+
+  @media screen and (max-width: 749px) {
+    .banner-slider__nav {
+      width: 40px;
+      height: 40px;
+    }
+
+    .banner-slider__nav--prev {
+      left: 10px;
+    }
+
+    .banner-slider__nav--next {
+      right: 10px;
+    }
+
+    [dir="rtl"] .banner-slider__nav--prev {
+      right: 10px;
+    }
+
+    [dir="rtl"] .banner-slider__nav--next {
+      left: 10px;
+    }
+  }
+
+  .banner-slider--height-small {
+    height: 350px;
+  }
+
+  .banner-slider--height-medium {
+    height: 500px;
+  }
+
+  .banner-slider--height-large {
+    height: 650px;
+  }
+
+  .banner-slider--height-adapt .banner-slider__slide img {
+    height: auto;
+  }
+
+  @media screen and (max-width: 749px) {
+    .banner-slider--height-small {
+      height: 250px;
+    }
+
+    .banner-slider--height-medium {
+      height: 350px;
+    }
+
+    .banner-slider--height-large {
+      height: 450px;
+    }
+  }
+
+  .banner-slider__slide {
+    height: 100%;
+  }
+
+  .banner-slider--height-small .banner-slider__slide img,
+  .banner-slider--height-medium .banner-slider__slide img,
+  .banner-slider--height-large .banner-slider__slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+</style>
+
+<div class="banner-slider-section">
+  <div class="banner-slider-container{% if section.settings.full_width != true %} page-width{% endif %}">
+    <div class="banner-slider banner-slider--height-{{ section.settings.image_height }}">
+      <div class="banner-slider__wrapper">
+    {%- for block in section.blocks -%}
+      {%- case block.type -%}
+        {%- when 'slide' -%}
+          <div class="banner-slider__slide{% if forloop.first %} active{% endif %}" data-slide="{{ forloop.index0 }}" {{ block.shopify_attributes }}>
+            {%- if block.settings.image != blank -%}
+              {{
+                block.settings.image
+                | image_url: width: 3840
+                | image_tag:
+                  loading: 'lazy',
+                  widths: '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840',
+                  sizes: '100vw'
+              }}
+            {%- elsif forloop.index == 1 -%}
+              <img 
+                src="{{ 'banner-1.jpg' | asset_img_url: '1920x' }}"
+                srcset="{{ 'banner-1.jpg' | asset_img_url: '375x' }} 375w,
+                        {{ 'banner-1.jpg' | asset_img_url: '750x' }} 750w,
+                        {{ 'banner-1.jpg' | asset_img_url: '1100x' }} 1100w,
+                        {{ 'banner-1.jpg' | asset_img_url: '1500x' }} 1500w,
+                        {{ 'banner-1.jpg' | asset_img_url: '1920x' }} 1920w"
+                sizes="100vw"
+                alt="{% if request.locale.iso_code == 'ar' %}الشريحة 1{% else %}Banner 1{% endif %}" 
+                loading="{% if forloop.index == 1 %}eager{% else %}lazy{% endif %}"
+                width="1920" 
+                height="600">
+            {%- elsif forloop.index == 2 -%}
+              <img 
+                src="{{ 'banner-2.jpg' | asset_img_url: '1920x' }}"
+                srcset="{{ 'banner-2.jpg' | asset_img_url: '375x' }} 375w,
+                        {{ 'banner-2.jpg' | asset_img_url: '750x' }} 750w,
+                        {{ 'banner-2.jpg' | asset_img_url: '1100x' }} 1100w,
+                        {{ 'banner-2.jpg' | asset_img_url: '1500x' }} 1500w,
+                        {{ 'banner-2.jpg' | asset_img_url: '1920x' }} 1920w"
+                sizes="100vw"
+                alt="{% if request.locale.iso_code == 'ar' %}الشريحة 2{% else %}Banner 2{% endif %}" 
+                loading="lazy"
+                width="1920" 
+                height="600">
+            {%- elsif forloop.index == 3 -%}
+              <img 
+                src="{{ 'banner-3.jpg' | asset_img_url: '1920x' }}"
+                srcset="{{ 'banner-3.jpg' | asset_img_url: '375x' }} 375w,
+                        {{ 'banner-3.jpg' | asset_img_url: '750x' }} 750w,
+                        {{ 'banner-3.jpg' | asset_img_url: '1100x' }} 1100w,
+                        {{ 'banner-3.jpg' | asset_img_url: '1500x' }} 1500w,
+                        {{ 'banner-3.jpg' | asset_img_url: '1920x' }} 1920w"
+                sizes="100vw"
+                alt="{% if request.locale.iso_code == 'ar' %}الشريحة 3{% else %}Banner 3{% endif %}" 
+                loading="lazy"
+                width="1920" 
+                height="600">
+            {%- else -%}
+              {{ 'hero-apparel-1' | placeholder_svg_tag: 'placeholder-svg' }}
+            {%- endif -%}
+            {%- if block.settings.link != blank -%}
+              <a href="{{ block.settings.link }}" class="banner-slider__link" aria-label="{{ block.settings.link_label | escape }}"></a>
+            {%- endif -%}
+          </div>
+      {%- endcase -%}
+    {%- endfor -%}
+  </div>
+
+  {%- if section.blocks.size > 1 -%}
+    <button type="button" class="banner-slider__nav banner-slider__nav--prev" aria-label="{{ 'general.slider.previous_slide' | t }}">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+      </svg>
+    </button>
+    <button type="button" class="banner-slider__nav banner-slider__nav--next" aria-label="{{ 'general.slider.next_slide' | t }}">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path d="M8.59 16.59L10 18l6-6-6-6-1.41 1.41L13.17 12z"/>
+      </svg>
+    </button>
+
+    {%- if section.settings.show_dots -%}
+      <div class="banner-slider__dots">
+        {%- for block in section.blocks -%}
+          {%- if block.type == 'slide' -%}
+            <button type="button" class="banner-slider__dot{% if forloop.first %} active{% endif %}" data-slide="{{ forloop.index0 }}" aria-label="{{ 'general.slider.slide' | t }} {{ forloop.index }}"></button>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+  {%- endif -%}
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const slider = document.querySelector('#shopify-section-{{ section.id }} .banner-slider');
+    if (!slider) return;
+
+    const slides = slider.querySelectorAll('.banner-slider__slide');
+    const prevBtn = slider.querySelector('.banner-slider__nav--prev');
+    const nextBtn = slider.querySelector('.banner-slider__nav--next');
+    const dots = slider.querySelectorAll('.banner-slider__dot');
+    
+    let currentSlide = 0;
+    const totalSlides = slides.length;
+
+    function showSlide(index) {
+      slides.forEach(slide => slide.classList.remove('active'));
+      dots.forEach(dot => dot.classList.remove('active'));
+      
+      slides[index].classList.add('active');
+      if (dots[index]) {
+        dots[index].classList.add('active');
+      }
+      currentSlide = index;
+    }
+
+    function nextSlide() {
+      const next = (currentSlide + 1) % totalSlides;
+      showSlide(next);
+    }
+
+    function prevSlide() {
+      const prev = (currentSlide - 1 + totalSlides) % totalSlides;
+      showSlide(prev);
+    }
+
+    if (prevBtn) {
+      prevBtn.addEventListener('click', prevSlide);
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener('click', nextSlide);
+    }
+
+    dots.forEach((dot, index) => {
+      dot.addEventListener('click', () => showSlide(index));
+    });
+
+    // Auto-play functionality
+    {% if section.settings.auto_rotate %}
+      let autoPlayInterval = setInterval(nextSlide, {{ section.settings.change_slides_speed | times: 1000 }});
+
+      // Pause on hover
+      slider.addEventListener('mouseenter', () => clearInterval(autoPlayInterval));
+      slider.addEventListener('mouseleave', () => {
+        autoPlayInterval = setInterval(nextSlide, {{ section.settings.change_slides_speed | times: 1000 }});
+      });
+    {% endif %}
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if (!slider.contains(document.activeElement)) return;
+      
+      if (e.key === 'ArrowLeft') {
+        prevSlide();
+      } else if (e.key === 'ArrowRight') {
+        nextSlide();
+      }
+    });
+
+    // Touch/swipe support
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    slider.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    });
+
+    slider.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      handleSwipe();
+    });
+
+    function handleSwipe() {
+      if (touchEndX < touchStartX - 50) {
+        nextSlide();
+      }
+      if (touchEndX > touchStartX + 50) {
+        prevSlide();
+      }
+    }
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Banner Slider",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "full_width",
+      "label": "Make section full width",
+      "default": false
+    },
+    {
+      "type": "select",
+      "id": "image_height",
+      "options": [
+        {
+          "value": "adapt",
+          "label": "Adapt to image"
+        },
+        {
+          "value": "small",
+          "label": "Small"
+        },
+        {
+          "value": "medium",
+          "label": "Medium"
+        },
+        {
+          "value": "large",
+          "label": "Large"
+        }
+      ],
+      "default": "medium",
+      "label": "Image height"
+    },
+    {
+      "type": "checkbox",
+      "id": "auto_rotate",
+      "label": "Auto-rotate slides",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "change_slides_speed",
+      "min": 3,
+      "max": 10,
+      "step": 1,
+      "unit": "s",
+      "label": "Change slides every",
+      "default": 5
+    },
+    {
+      "type": "checkbox",
+      "id": "show_dots",
+      "label": "Show dots navigation",
+      "default": true
+    }
+  ],
+  "blocks": [
+    {
+      "type": "slide",
+      "name": "Slide",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        },
+        {
+          "type": "text",
+          "id": "link_label",
+          "label": "Link label",
+          "info": "For accessibility"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Banner Slider",
+      "blocks": [
+        {
+          "type": "slide"
+        },
+        {
+          "type": "slide"
+        },
+        {
+          "type": "slide"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,6 +1,5 @@
 {%- comment -%}
   Renders the language picker for the localization form
-
   Accepts:
     - localPosition: pass in the position in which the form is coming up to create specific IDs
 {%- endcomment -%}
@@ -13,7 +12,13 @@
     aria-controls="{{ localPosition }}List"
     aria-describedby="{{ localPosition }}Label"
   >
-    <span>{{ localization.language.endonym_name | capitalize }}</span>
+    <span>
+      {%- if localization.language.iso_code == 'ar' -%}
+        العربية
+      {%- else -%}
+        {{ localization.language.endonym_name | capitalize }}
+      {%- endif -%}
+    </span>
     {{ 'icon-caret.svg' | inline_asset_content }}
   </button>
   <div class="disclosure__list-wrapper language-selector" hidden>
@@ -22,7 +27,7 @@
         <li class="disclosure__item" tabindex="-1">
           <a
             class="link link--text disclosure__link caption-large focus-inset"
-            href="#"
+            href="{{ language.root_url }}"
             hreflang="{{ language.iso_code }}"
             lang="{{ language.iso_code }}"
             {% if language.iso_code == localization.language.iso_code %}
@@ -38,7 +43,13 @@
               {{- 'icon-checkmark.svg' | inline_asset_content -}}
             </span>
             <span>
-              {{ language.endonym_name | capitalize }}
+              {%- if language.iso_code == 'ar' -%}
+                العربية
+              {%- elsif language.iso_code == 'en' -%}
+                English
+              {%- else -%}
+                {{ language.endonym_name | capitalize }}
+              {%- endif -%}
             </span>
           </a>
         </li>

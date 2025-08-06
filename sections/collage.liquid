@@ -22,7 +22,13 @@
   <div class="page-width section-{{ section.id }}-padding">
     {%- if section.settings.heading != blank -%}
       <h2 class="collage-wrapper-title inline-richtext {{ section.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
-        {{ section.settings.heading }}
+        {%- liquid
+          if section.settings.heading == 'Multimedia collage'
+            render 'bilingual-content', content_key: 'multimedia_collage_heading', type: 'title'
+          else
+            echo section.settings.heading
+          endif
+        -%}
       </h2>
     {%- endif -%}
     <div class="collage{% if section.settings.mobile_layout == 'collage' %} collage--mobile{% endif %}">

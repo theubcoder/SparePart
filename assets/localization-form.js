@@ -35,7 +35,14 @@ if (!customElements.get('localization-form')) {
           this.elements.resetButton.addEventListener('mousedown', (event) => event.preventDefault());
         }
 
-        this.querySelectorAll('a').forEach((item) => item.addEventListener('click', this.onItemClick.bind(this)));
+        // Handle both links and buttons
+        this.querySelectorAll('a[data-value], button[type="submit"]').forEach((item) => {
+          if (item.tagName === 'BUTTON' && item.type === 'submit') {
+            // For submit buttons, let the form handle submission naturally
+            return;
+          }
+          item.addEventListener('click', this.onItemClick.bind(this));
+        });
       }
 
       hidePanel() {
@@ -105,8 +112,30 @@ if (!customElements.get('localization-form')) {
       onItemClick(event) {
         event.preventDefault();
         const form = this.querySelector('form');
-        this.elements.input.value = event.currentTarget.dataset.value;
-        if (form) form.submit();
+        
+        // Handle both button submissions and link clicks
+        if (event.currentTarget.tagName === 'BUTTON' && event.currentTarget.hasAttribute('value')) {
+          // Button submission - form will handle it
+          return;
+        }
+        
+        // For links with data-value (language/country selection)
+        if (event.currentTarget.dataset.value) {
+          const selectedValue = event.currentTarget.dataset.value;
+          console.log('Language/Country selected:', selectedValue);
+          
+          this.elements.input.value = selectedValue;
+          
+          if (form) {
+            // Log form details for debugging
+            console.log('Form action:', form.action);
+            console.log('Input name:', this.elements.input.name);
+            console.log('Input value:', this.elements.input.value);
+            
+            // Ensure the form action is correct and submit
+            form.submit();
+          }
+        }
       }
 
       openSelector() {

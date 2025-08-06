@@ -1,0 +1,48 @@
+{%- comment -%}
+  Translates menu titles based on current locale
+  Usage: {% render 'translate-menu-title', title: link.title %}
+{%- endcomment -%}
+
+{%- liquid
+  assign translated_title = title
+  assign title_lower = title | downcase
+  
+  if request.locale.iso_code == 'ar'
+    case title_lower
+      when 'home'
+        assign translated_title = 'الرئيسية'
+      when 'catalog', 'catalogue'
+        assign translated_title = 'الكتالوج'
+      when 'contact', 'contact us'
+        assign translated_title = 'اتصل بنا'
+      when 'shop'
+        assign translated_title = 'المتجر'
+      when 'products'
+        assign translated_title = 'المنتجات'
+      when 'collections'
+        assign translated_title = 'المجموعات'
+      when 'about', 'about us'
+        assign translated_title = 'من نحن'
+      when 'cart'
+        assign translated_title = 'السلة'
+      when 'search'
+        assign translated_title = 'البحث'
+      when 'account', 'my account'
+        assign translated_title = 'حسابي'
+      when 'spare parts'
+        assign translated_title = 'قطع الغيار'
+      when 'categories'
+        assign translated_title = 'الفئات'
+      when 'brands'
+        assign translated_title = 'الماركات'
+      when 'new arrivals'
+        assign translated_title = 'وصل حديثاً'
+      when 'sale', 'sales'
+        assign translated_title = 'تخفيضات'
+      when 'services'
+        assign translated_title = 'الخدمات'
+    endcase
+  endif
+-%}
+
+{{ translated_title }}

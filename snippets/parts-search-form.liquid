@@ -1,0 +1,216 @@
+<div class="parts-search-form" data-spare-parts-search>
+  {%- if settings.spare_parts_search_enabled -%}
+    <div class="parts-vehicle-selector">
+      <h3 class="parts-vehicle-selector__title">{{ 'spare_parts.search.select_vehicle' | t }}</h3>
+      <div class="parts-vehicle-selector__grid">
+        <div class="field">
+          <label for="parts-brand" class="field__label">{{ 'spare_parts.search.brand' | t }}</label>
+          <select id="parts-brand" name="brand" class="select field__input" data-parts-brand>
+            <option value="">{{ 'spare_parts.search.select_brand' | t }}</option>
+          </select>
+        </div>
+        
+        <div class="field">
+          <label for="parts-model" class="field__label">{{ 'spare_parts.search.model' | t }}</label>
+          <select id="parts-model" name="model" class="select field__input" data-parts-model disabled>
+            <option value="">{{ 'spare_parts.search.select_model' | t }}</option>
+          </select>
+        </div>
+        
+        <div class="field">
+          <label for="parts-trim" class="field__label">{{ 'spare_parts.search.trim' | t }}</label>
+          <select id="parts-trim" name="trim" class="select field__input" data-parts-trim disabled>
+            <option value="">{{ 'spare_parts.search.select_trim' | t }}</option>
+          </select>
+        </div>
+        
+        <div class="field">
+          <label for="parts-year" class="field__label">{{ 'spare_parts.search.year' | t }}</label>
+          <select id="parts-year" name="year" class="select field__input" data-parts-year disabled>
+            <option value="">{{ 'spare_parts.search.select_year' | t }}</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    
+    <div class="parts-search-divider">
+      <span>{{ 'spare_parts.search.or' | t }}</span>
+    </div>
+  {%- endif -%}
+  
+  <form action="{{ routes.search_url }}" method="get" role="search" class="search search-modal__form" data-parts-search-form>
+    <div class="field">
+      <input
+        class="search__input field__input"
+        id="{{ input_id }}"
+        type="search"
+        name="q"
+        value="{{ search.terms | escape }}"
+        placeholder="{{ 'spare_parts.search.placeholder' | t }}"
+        {%- if settings.predictive_search_enabled -%}
+          role="combobox"
+          aria-expanded="false"
+          aria-owns="predictive-search-results"
+          aria-controls="predictive-search-results"
+          aria-haspopup="listbox"
+          aria-autocomplete="list"
+          autocorrect="off"
+          autocomplete="off"
+          autocapitalize="off"
+          spellcheck="false"
+        {%- endif -%}
+      >
+      <label class="field__label" for="{{ input_id }}">{{ 'spare_parts.search.label' | t }}</label>
+      <input type="hidden" name="type" value="product">
+      <input type="hidden" name="options[prefix]" value="last">
+      <input type="hidden" name="vehicle_brand" value="" data-vehicle-brand>
+      <input type="hidden" name="vehicle_model" value="" data-vehicle-model>
+      <input type="hidden" name="vehicle_trim" value="" data-vehicle-trim>
+      <input type="hidden" name="vehicle_year" value="" data-vehicle-year>
+      <button type="submit" class="search__button field__button" aria-label="{{ 'spare_parts.search.submit' | t }}">
+        <svg class="icon icon-search">
+          <use href="#icon-search"></use>
+        </svg>
+      </button>
+    </div>
+
+    {%- if settings.predictive_search_enabled -%}
+      <div class="predictive-search predictive-search--header" tabindex="-1" data-predictive-search>
+        {%- render 'loading-spinner', class: 'predictive-search__loading-state' -%}
+      </div>
+
+      <span class="predictive-search-status visually-hidden" role="status" aria-hidden="true"></span>
+    {%- endif -%}
+  </form>
+</div>
+
+<script>
+  window.sparePartsData = {{ settings.spare_parts_data | default: '[]' }};
+</script>
+<script src="{{ 'spare-parts-search.js' | asset_url }}" defer></script>
+
+<style>
+  .parts-search-form {
+    max-width: 800px;
+    margin: 0 auto 2rem;
+  }
+  
+  .parts-vehicle-selector {
+    margin-bottom: 2rem;
+    padding: 2rem;
+    background: rgba(var(--color-foreground), 0.03);
+    border-radius: var(--inputs-radius);
+  }
+  
+  .parts-vehicle-selector__title {
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+    text-align: center;
+  }
+  
+  .parts-vehicle-selector__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1rem;
+  }
+  
+  .parts-search-divider {
+    text-align: center;
+    margin: 2rem 0;
+    position: relative;
+  }
+  
+  .parts-search-divider::before,
+  .parts-search-divider::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: calc(50% - 2rem);
+    height: 1px;
+    background: rgba(var(--color-foreground), 0.2);
+  }
+  
+  .parts-search-divider::before {
+    left: 0;
+  }
+  
+  .parts-search-divider::after {
+    right: 0;
+  }
+  
+  .parts-search-divider span {
+    padding: 0 1rem;
+    background: rgb(var(--color-background));
+    position: relative;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    color: rgba(var(--color-foreground), 0.6);
+  }
+  
+  .parts-search-form .field {
+    position: relative;
+  }
+  
+  .parts-search-form .select {
+    width: 100%;
+    padding: 0.8rem 3rem 0.8rem 1rem;
+    font-size: 1rem;
+    background-image: url("data:image/svg+xml,%3Csvg aria-hidden='true' focusable='false' viewBox='0 0 10 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z' fill='currentColor'%3E%3C/path%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1rem;
+  }
+  
+  .parts-search-form .search__input {
+    padding-right: 5rem;
+    font-size: 1.1rem;
+  }
+  
+  .parts-search-form .search__button {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    padding: 0 1.5rem;
+    background: rgba(var(--color-foreground), 0.08);
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s ease;
+  }
+  
+  .parts-search-form .search__button:hover {
+    background: rgba(var(--color-foreground), 0.12);
+  }
+  
+  @media screen and (max-width: 749px) {
+    .parts-vehicle-selector__grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  /* RTL Support */
+  [dir="rtl"] .parts-search-form .select {
+    padding: 0.8rem 1rem 0.8rem 3rem;
+    background-position: left 1rem center;
+  }
+  
+  [dir="rtl"] .parts-search-form .search__input {
+    padding-left: 5rem;
+    padding-right: 1rem;
+  }
+  
+  [dir="rtl"] .parts-search-form .search__button {
+    left: 0;
+    right: auto;
+  }
+  
+  [dir="rtl"] .parts-search-divider::before {
+    right: 0;
+    left: auto;
+  }
+  
+  [dir="rtl"] .parts-search-divider::after {
+    left: 0;
+    right: auto;
+  }
+</style>

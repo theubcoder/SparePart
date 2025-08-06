@@ -1,0 +1,589 @@
+/* RTL Support for Arabic Language */
+[dir="rtl"] {
+  /* Text Alignment */
+  direction: rtl;
+}
+
+/* Text alignment adjustments for RTL */
+[dir="rtl"] .left {
+  text-align: right !important;
+}
+
+[dir="rtl"] .right {
+  text-align: left !important;
+}
+
+[dir="rtl"] .text-left {
+  text-align: right !important;
+}
+
+[dir="rtl"] .text-right {
+  text-align: left !important;
+}
+
+/* Center alignment stays center */
+[dir="rtl"] .center,
+[dir="rtl"] .text-center {
+  text-align: center !important;
+}
+
+/* Header Adjustments */
+[dir="rtl"] .header__icon--menu {
+  margin-left: 1rem;
+  margin-right: 0;
+}
+
+[dir="rtl"] .header__icon--cart {
+  margin-right: 1rem;
+  margin-left: 0;
+}
+
+[dir="rtl"] .header__menu-item {
+  padding-left: 2rem;
+  padding-right: 0;
+}
+
+/* Navigation */
+[dir="rtl"] .header__inline-menu {
+  direction: rtl;
+}
+
+[dir="rtl"] .header__submenu {
+  left: auto;
+  right: 0;
+}
+
+/* Product Grid */
+[dir="rtl"] .grid {
+  direction: rtl;
+}
+
+[dir="rtl"] .card__information {
+  text-align: right;
+}
+
+/* Product Card Headings */
+[dir="rtl"] .card__heading {
+  text-align: right;
+  direction: rtl;
+  width: 100%;
+}
+
+[dir="rtl"] .card__heading a {
+  display: block;
+  text-align: right;
+  direction: rtl;
+}
+
+[dir="rtl"] .card__heading h3,
+[dir="rtl"] .card__heading .h5 {
+  text-align: right;
+  direction: rtl;
+}
+
+/* Product Card Content */
+[dir="rtl"] .card__content {
+  text-align: right;
+}
+
+[dir="rtl"] .card-information {
+  text-align: right;
+}
+
+/* Product Card Price Positioning */
+[dir="rtl"] .price {
+  display: block;
+  margin-top: 0.5rem;
+  text-align: right;
+}
+
+[dir="rtl"] .price__container {
+  text-align: right;
+  justify-content: flex-start;
+}
+
+[dir="rtl"] .price-item {
+  margin-left: 0.5rem;
+  margin-right: 0;
+}
+
+/* Forms */
+[dir="rtl"] .field__input,
+[dir="rtl"] .field__label {
+  text-align: right;
+}
+
+[dir="rtl"] .field__label {
+  left: auto;
+  right: calc(var(--inputs-border-width) * 2);
+}
+
+/* Buttons */
+[dir="rtl"] .button--secondary::after {
+  margin-left: 0;
+  margin-right: 1.5rem;
+  transform: rotate(180deg);
+}
+
+/* Cart */
+[dir="rtl"] .cart-item__details {
+  text-align: right;
+}
+
+[dir="rtl"] .cart-item__price-wrapper > *:first-child {
+  margin-left: 0.75rem;
+  margin-right: 0;
+}
+
+/* Product Page */
+[dir="rtl"] .product__info {
+  text-align: right;
+}
+
+/* Product Title on Product Page */
+[dir="rtl"] .product__title {
+  text-align: right;
+  direction: rtl;
+}
+
+[dir="rtl"] .product__title h1,
+[dir="rtl"] .product__title h2 {
+  text-align: right;
+  direction: rtl;
+}
+
+[dir="rtl"] .product__accordion summary .icon-accordion {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+[dir="rtl"] .product__accordion .icon-caret {
+  transform: rotate(90deg);
+}
+
+[dir="rtl"] .product__accordion[open] .icon-caret {
+  transform: rotate(-90deg);
+}
+
+/* Footer */
+[dir="rtl"] .footer {
+  text-align: right;
+}
+
+[dir="rtl"] .footer__content-top {
+  direction: rtl;
+}
+
+[dir="rtl"] .list-social__link {
+  margin-left: 1.4rem;
+  margin-right: 0;
+}
+
+[dir="rtl"] .list-social__item:last-child .list-social__link {
+  margin-left: 0;
+}
+
+/* Search */
+[dir="rtl"] .search__input {
+  padding-left: 5rem;
+  padding-right: 2rem;
+}
+
+[dir="rtl"] .search__button {
+  left: 0;
+  right: auto;
+}
+
+/* Quantity Selector */
+[dir="rtl"] .quantity__button:first-child {
+  border-radius: 0 var(--inputs-radius) var(--inputs-radius) 0;
+}
+
+[dir="rtl"] .quantity__button:last-child {
+  border-radius: var(--inputs-radius) 0 0 var(--inputs-radius);
+}
+
+/* Filters */
+[dir="rtl"] .facets__form {
+  direction: rtl;
+}
+
+[dir="rtl"] .facet-checkbox input[type="checkbox"] {
+  margin-left: 1rem;
+  margin-right: 0;
+}
+
+/* Breadcrumbs */
+[dir="rtl"] .breadcrumbs__item:not(:last-child):after {
+  content: "\2039";
+  margin: 0 0.5rem;
+}
+
+/* Price */
+[dir="rtl"] .price__regular,
+[dir="rtl"] .price__sale {
+  direction: ltr;
+  unicode-bidi: embed;
+}
+
+/* Product Price Display */
+[dir="rtl"] .product__info .price {
+  margin-top: 1rem;
+  display: block;
+  text-align: right;
+}
+
+[dir="rtl"] .product__info .price__container {
+  justify-content: flex-start;
+}
+
+[dir="rtl"] .product__info .price-item {
+  margin-left: 1rem;
+  margin-right: 0;
+}
+
+/* Product Information */
+[dir="rtl"] .product__info > * {
+  text-align: right;
+}
+
+[dir="rtl"] .product__description {
+  text-align: right;
+}
+
+[dir="rtl"] .product__vendor {
+  text-align: right;
+}
+
+/* Parts Specifications Grid */
+[dir="rtl"] .parts-specification-item {
+  direction: rtl;
+  text-align: right;
+}
+
+[dir="rtl"] .parts-specification-item__icon {
+  margin-right: 0;
+  margin-left: 1rem;
+}
+
+/* Collapsible Content */
+[dir="rtl"] details summary .icon {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+/* Media Gallery */
+[dir="rtl"] .thumbnail-list {
+  direction: rtl;
+}
+
+[dir="rtl"] .product__media-icon {
+  left: auto;
+  right: 1.2rem;
+}
+
+/* Sliders */
+[dir="rtl"] .slider-button--prev {
+  left: auto;
+  right: 0;
+}
+
+[dir="rtl"] .slider-button--next {
+  right: auto;
+  left: 0;
+}
+
+[dir="rtl"] .slider-button--prev .icon {
+  transform: rotate(180deg);
+}
+
+[dir="rtl"] .slider-button--next .icon {
+  transform: rotate(180deg);
+}
+
+/* Announcement Bar */
+[dir="rtl"] .announcement-bar {
+  direction: rtl;
+}
+
+/* Collection List */
+[dir="rtl"] .collection-list {
+  direction: rtl;
+}
+
+/* Collection Page */
+[dir="rtl"] .collection-hero__title {
+  text-align: right;
+}
+
+[dir="rtl"] .collection-hero__description {
+  text-align: right;
+}
+
+/* Product Grid on Collection Pages */
+[dir="rtl"] .collection .grid {
+  direction: rtl;
+}
+
+[dir="rtl"] .collection .card {
+  text-align: right;
+}
+
+/* Featured Collection Section */
+[dir="rtl"] .collection__title {
+  text-align: right;
+}
+
+[dir="rtl"] .collection__view-all {
+  text-align: left;
+}
+
+/* Pagination */
+[dir="rtl"] .pagination {
+  direction: rtl;
+}
+
+[dir="rtl"] .pagination__item--prev .icon {
+  transform: rotate(180deg);
+}
+
+[dir="rtl"] .pagination__item--next .icon {
+  transform: rotate(180deg);
+}
+
+/* Modals */
+[dir="rtl"] .modal__close-button {
+  left: 1.5rem;
+  right: auto;
+}
+
+/* Badges */
+[dir="rtl"] .badge {
+  margin-left: 0.4rem;
+  margin-right: 0;
+}
+
+/* Select Dropdowns */
+[dir="rtl"] .select {
+  background-position: left 1.5rem center;
+  padding-left: 4rem;
+  padding-right: 2rem;
+}
+
+/* Share Buttons */
+[dir="rtl"] .share-button__fallback {
+  direction: rtl;
+}
+
+/* Lists */
+[dir="rtl"] ul,
+[dir="rtl"] ol {
+  padding-left: 0;
+  padding-right: 2em;
+}
+
+/* Spare Parts Specific */
+[dir="rtl"] .parts-search-form .search__button {
+  left: auto;
+  right: 0;
+}
+
+[dir="rtl"] .parts-vehicle-selector {
+  text-align: right;
+}
+
+[dir="rtl"] .parts-vehicle-selector__title {
+  text-align: center;
+}
+
+[dir="rtl"] .parts-vehicle-selector__grid {
+  direction: rtl;
+}
+
+[dir="rtl"] .parts-search-form .field__label {
+  right: 2rem;
+  left: auto;
+}
+
+[dir="rtl"] .parts-search-form select.field__input {
+  padding: 0.8rem 1rem 0.8rem 3rem;
+  background-position: left 1rem center;
+  text-align: right;
+}
+
+/* Parts Specifications */
+[dir="rtl"] .parts-specifications__grid {
+  direction: rtl;
+}
+
+[dir="rtl"] .parts-specification-item {
+  text-align: right;
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .parts-specification-item__icon {
+  margin-left: 1rem;
+  margin-right: 0;
+}
+
+/* Ensure numbers stay LTR */
+[dir="rtl"] .price,
+[dir="rtl"] .product__text,
+[dir="rtl"] .quantity__input,
+[dir="rtl"] .parts-specification-item__value {
+  direction: ltr;
+  unicode-bidi: embed;
+}
+
+/* Ensure part numbers stay LTR */
+[dir="rtl"] [data-part-number] {
+  direction: ltr;
+  unicode-bidi: embed;
+}
+
+/* General RTL Fixes */
+[dir="rtl"] * {
+  text-align: inherit;
+}
+
+[dir="rtl"] body {
+  direction: rtl;
+  text-align: right;
+}
+
+/* Headings */
+[dir="rtl"] h1,
+[dir="rtl"] h2,
+[dir="rtl"] h3,
+[dir="rtl"] h4,
+[dir="rtl"] h5,
+[dir="rtl"] h6 {
+  text-align: right;
+}
+
+/* Center aligned elements should stay centered */
+[dir="rtl"] .center,
+[dir="rtl"] .text-center,
+[dir="rtl"] .parts-specifications__heading,
+[dir="rtl"] .banner__content--middle-center,
+[dir="rtl"] .banner__content--bottom-center,
+[dir="rtl"] .banner__content--top-center,
+[dir="rtl"] .rich-text__wrapper--center,
+[dir="rtl"] [class*="--center"] {
+  text-align: center !important;
+}
+
+/* Content alignment for RTL */
+[dir="rtl"] .banner__content--middle-left,
+[dir="rtl"] .banner__content--bottom-left,
+[dir="rtl"] .banner__content--top-left,
+[dir="rtl"] .rich-text__wrapper--left,
+[dir="rtl"] [class*="content--left"],
+[dir="rtl"] [class*="align-left"] {
+  text-align: right !important;
+}
+
+[dir="rtl"] .banner__content--middle-right,
+[dir="rtl"] .banner__content--bottom-right,
+[dir="rtl"] .banner__content--top-right,
+[dir="rtl"] .rich-text__wrapper--right,
+[dir="rtl"] [class*="content--right"],
+[dir="rtl"] [class*="align-right"] {
+  text-align: left !important;
+}
+
+/* Multicolumn alignment */
+[dir="rtl"] .multicolumn-card__info {
+  text-align: right;
+}
+
+[dir="rtl"] .multicolumn-list__item--center .multicolumn-card__info {
+  text-align: center !important;
+}
+
+[dir="rtl"] .multicolumn-list__item--left .multicolumn-card__info {
+  text-align: right !important;
+}
+
+[dir="rtl"] .multicolumn-list__item--right .multicolumn-card__info {
+  text-align: left !important;
+}
+
+/* Flexbox RTL */
+[dir="rtl"] .flex,
+[dir="rtl"] [class*="flex-"] {
+  direction: rtl;
+}
+
+/* Grid RTL */
+[dir="rtl"] .grid,
+[dir="rtl"] [class*="grid-"] {
+  direction: rtl;
+}
+
+/* Announcement Bar Fix */
+[dir="rtl"] .announcement-bar__message {
+  direction: rtl;
+  text-align: center;
+}
+
+/* Utility Bar */
+[dir="rtl"] .utility-bar__grid {
+  direction: rtl;
+}
+
+/* Page Width Container */
+[dir="rtl"] .page-width {
+  direction: rtl;
+}
+
+/* Sections */
+[dir="rtl"] section,
+[dir="rtl"] .section {
+  direction: rtl;
+  text-align: right;
+}
+
+/* Rich Text Content */
+[dir="rtl"] .rich-text__text,
+[dir="rtl"] .rte {
+  text-align: right;
+}
+
+/* Lists in content */
+[dir="rtl"] .rte ul,
+[dir="rtl"] .rte ol,
+[dir="rtl"] .rich-text ul,
+[dir="rtl"] .rich-text ol {
+  padding-right: 2em;
+  padding-left: 0;
+}
+
+/* Links */
+[dir="rtl"] a {
+  unicode-bidi: embed;
+}
+
+/* Icons with text */
+[dir="rtl"] .icon-with-text {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .icon-with-text__icon {
+  margin-left: 0.5rem;
+  margin-right: 0;
+}
+
+/* Ensure all custom sections inherit RTL */
+[dir="rtl"] [class*="__content"],
+[dir="rtl"] [class*="__text"] {
+  text-align: right;
+}
+
+/* Fix for inline elements */
+[dir="rtl"] span,
+[dir="rtl"] strong,
+[dir="rtl"] em,
+[dir="rtl"] small {
+  unicode-bidi: embed;
+}

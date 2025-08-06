@@ -1,49 +1,41 @@
 {
   "sections": {
-    "image_banner": {
-      "type": "image-banner",
+    "banner_slider": {
+      "type": "banner-slider",
       "blocks": {
-        "heading": {
-          "type": "heading",
+        "slide_1": {
+          "type": "slide",
           "settings": {
-            "heading": "Image banner",
-            "heading_size": "h0"
+            "link": "shopify://collections/all",
+            "link_label": "Shop all products"
           }
         },
-        "text": {
-          "type": "text",
+        "slide_2": {
+          "type": "slide",
           "settings": {
-            "text": "Give customers details about the banner image(s) or content on the template.",
-            "text_style": "body"
+            "link": "shopify://collections/all",
+            "link_label": "Shop all products"
           }
         },
-        "button": {
-          "type": "buttons",
+        "slide_3": {
+          "type": "slide",
           "settings": {
-            "button_label_1": "Shop all",
-            "button_link_1": "shopify://collections/all",
-            "button_style_secondary_1": true,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
+            "link": "shopify://collections/all",
+            "link_label": "Shop all products"
           }
         }
       },
       "block_order": [
-        "heading",
-        "text",
-        "button"
+        "slide_1",
+        "slide_2",
+        "slide_3"
       ],
       "settings": {
-        "image_overlay_opacity": 40,
+        "full_width": false,
         "image_height": "large",
-        "desktop_content_position": "bottom-center",
-        "show_text_box": false,
-        "desktop_content_alignment": "center",
-        "color_scheme": "scheme-3",
-        "mobile_content_alignment": "center",
-        "stack_images_on_mobile": false,
-        "show_text_below": false
+        "auto_rotate": true,
+        "change_slides_speed": 5,
+        "show_dots": true
       }
     },
     "rich_text": {
@@ -200,7 +192,7 @@
     }
   },
   "order": [
-    "image_banner",
+    "banner_slider",
     "rich_text",
     "featured_collection",
     "collage",

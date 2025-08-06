@@ -1,9 +1,9 @@
 [
   {
     "name": "theme_info",
-    "theme_name": "Dawn",
-    "theme_version": "15.4.0",
-    "theme_author": "Shopify",
+    "theme_name": "Spare Parts Pro",
+    "theme_version": "1.0.0",
+    "theme_author": "Custom Spare Parts",
     "theme_documentation_url": "https://help.shopify.com/manual/online-store/themes",
     "theme_support_url": "https://support.shopify.com/"
   },
@@ -1449,6 +1449,49 @@
         "id": "cart_color_scheme",
         "label": "t:sections.all.colors.label",
         "default": "scheme-1"
+      }
+    ]
+  },
+  {
+    "name": "Spare Parts Configuration",
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "Configure your spare parts vehicle data structure for brand, model, trim, and year selection."
+      },
+      {
+        "type": "header",
+        "content": "Vehicle Data"
+      },
+      {
+        "type": "textarea",
+        "id": "spare_parts_data",
+        "label": "Vehicle Data (JSON)",
+        "info": "Enter your vehicle data in JSON format. See documentation for structure.",
+        "default": "[{\"brand\":\"Toyota\",\"models\":[{\"name\":\"Camry\",\"trims\":[{\"name\":\"LE\",\"years\":[\"2020\",\"2021\",\"2022\",\"2023\",\"2024\"]},{\"name\":\"SE\",\"years\":[\"2020\",\"2021\",\"2022\",\"2023\",\"2024\"]},{\"name\":\"XLE\",\"years\":[\"2020\",\"2021\",\"2022\",\"2023\",\"2024\"]}]},{\"name\":\"Corolla\",\"trims\":[{\"name\":\"L\",\"years\":[\"2020\",\"2021\",\"2022\",\"2023\",\"2024\"]},{\"name\":\"LE\",\"years\":[\"2020\",\"2021\",\"2022\",\"2023\",\"2024\"]},{\"name\":\"SE\",\"years\":[\"2020\",\"2021\",\"2022\",\"2023\",\"2024\"]}]}]},{\"brand\":\"Honda\",\"models\":[{\"name\":\"Accord\",\"trims\":[{\"name\":\"LX\",\"years\":[\"2020\",\"2021\",\"2022\",\"2023\",\"2024\"]},{\"name\":\"Sport\",\"years\":[\"2020\",\"2021\",\"2022\",\"2023\",\"2024\"]},{\"name\":\"EX-L\",\"years\":[\"2020\",\"2021\",\"2022\",\"2023\",\"2024\"]}]},{\"name\":\"Civic\",\"trims\":[{\"name\":\"LX\",\"years\":[\"2020\",\"2021\",\"2022\",\"2023\",\"2024\"]},{\"name\":\"Sport\",\"years\":[\"2020\",\"2021\",\"2022\",\"2023\",\"2024\"]},{\"name\":\"Touring\",\"years\":[\"2020\",\"2021\",\"2022\",\"2023\",\"2024\"]}]}]}]"
+      },
+      {
+        "type": "header",
+        "content": "Search Settings"
+      },
+      {
+        "type": "checkbox",
+        "id": "spare_parts_search_enabled",
+        "label": "Enable Advanced Spare Parts Search",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "spare_parts_show_part_number",
+        "label": "Show Part Number Field",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "spare_parts_rtl_enabled",
+        "label": "Enable RTL Support",
+        "default": true,
+        "info": "Enable right-to-left layout for Arabic language"
       }
     ]
   }

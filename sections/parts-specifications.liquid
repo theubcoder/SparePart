@@ -1,0 +1,166 @@
+{{ 'section-parts-specifications.css' | asset_url | stylesheet_tag }}
+
+<div class="parts-specifications section-{{ section.id }}-padding">
+  <div class="page-width">
+    {%- if section.settings.heading != blank -%}
+      <h2 class="parts-specifications__heading {{ section.settings.heading_size }}">
+        {{ section.settings.heading | escape }}
+      </h2>
+    {%- endif -%}
+    
+    <div class="parts-specifications__grid">
+      {%- for block in section.blocks -%}
+        <div class="parts-specification-item" {{ block.shopify_attributes }}>
+          {%- if block.settings.icon != blank -%}
+            <div class="parts-specification-item__icon">
+              {%- render 'icon', icon: block.settings.icon -%}
+            </div>
+          {%- endif -%}
+          
+          <div class="parts-specification-item__content">
+            {%- if block.settings.title != blank -%}
+              <h3 class="parts-specification-item__title">{{ block.settings.title | escape }}</h3>
+            {%- endif -%}
+            
+            {%- if block.settings.value != blank -%}
+              <p class="parts-specification-item__value">{{ block.settings.value | escape }}</p>
+            {%- endif -%}
+          </div>
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Parts Specifications",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "default": "Technical Specifications",
+      "label": "Heading"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "options": [
+        {
+          "value": "h2",
+          "label": "Small"
+        },
+        {
+          "value": "h1",
+          "label": "Medium"
+        },
+        {
+          "value": "h0",
+          "label": "Large"
+        }
+      ],
+      "default": "h1",
+      "label": "Heading size"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Top padding",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Bottom padding",
+      "default": 36
+    }
+  ],
+  "blocks": [
+    {
+      "type": "specification",
+      "name": "Specification",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "options": [
+            {
+              "value": "none",
+              "label": "None"
+            },
+            {
+              "value": "clipboard",
+              "label": "Clipboard"
+            },
+            {
+              "value": "ruler",
+              "label": "Ruler"
+            },
+            {
+              "value": "check",
+              "label": "Check"
+            },
+            {
+              "value": "box",
+              "label": "Box"
+            },
+            {
+              "value": "truck",
+              "label": "Truck"
+            }
+          ],
+          "default": "clipboard",
+          "label": "Icon"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "default": "Part Number",
+          "label": "Title"
+        },
+        {
+          "type": "text",
+          "id": "value",
+          "default": "ABC-123",
+          "label": "Value"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Parts Specifications",
+      "blocks": [
+        {
+          "type": "specification"
+        },
+        {
+          "type": "specification"
+        },
+        {
+          "type": "specification"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

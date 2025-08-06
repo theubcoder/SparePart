@@ -1,0 +1,96 @@
+/* Language Selector in Drawer Menu */
+.menu-drawer__localization {
+  background: rgba(var(--color-foreground), 0.03);
+  margin-bottom: 1rem;
+}
+
+.menu-drawer__localization .disclosure {
+  width: 100%;
+}
+
+.menu-drawer__localization .disclosure__button {
+  width: 100%;
+  padding: 1rem 2rem;
+  justify-content: space-between;
+  font-size: 1.4rem;
+  font-weight: 500;
+  border: 0.1rem solid rgba(var(--color-foreground), 0.08);
+  border-radius: 0.4rem;
+  background: rgb(var(--color-background));
+}
+
+.menu-drawer__localization .disclosure__button[aria-expanded="true"] {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.menu-drawer__localization .disclosure__list-wrapper {
+  position: relative;
+  border: 0.1rem solid rgba(var(--color-foreground), 0.08);
+  border-top: none;
+  border-bottom-left-radius: 0.4rem;
+  border-bottom-right-radius: 0.4rem;
+  background: rgb(var(--color-background));
+  max-height: 30rem;
+  overflow-y: auto;
+}
+
+.menu-drawer__localization .disclosure__list {
+  padding: 0;
+  margin: 0;
+}
+
+.menu-drawer__localization .disclosure__item {
+  border-top: 0.1rem solid rgba(var(--color-foreground), 0.08);
+}
+
+.menu-drawer__localization .disclosure__item:first-child {
+  border-top: none;
+}
+
+.menu-drawer__localization .disclosure__link {
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  text-decoration: none;
+}
+
+.menu-drawer__localization .disclosure__link:hover {
+  background: rgba(var(--color-foreground), 0.04);
+}
+
+.menu-drawer__localization .disclosure__link[aria-current="true"] {
+  background: rgba(var(--color-foreground), 0.08);
+  font-weight: 600;
+}
+
+/* Icon styling */
+.menu-drawer__localization .disclosure__button svg {
+  width: 1.2rem;
+  height: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.menu-drawer__localization .disclosure__button[aria-expanded="true"] svg {
+  transform: rotate(180deg);
+}
+
+/* RTL Support */
+[dir="rtl"] .menu-drawer__localization .disclosure__button,
+[dir="rtl"] .menu-drawer__localization .disclosure__link {
+  direction: rtl;
+  text-align: right;
+}
+
+/* Language label styling */
+.menu-drawer__localization-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  color: rgba(var(--color-foreground), 0.75);
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  padding: 0 2rem;
+}

@@ -1,0 +1,786 @@
+{
+  "general": {
+    "navigation": {
+      "home": "الرئيسية",
+      "catalog": "الكتالوج",
+      "contact": "اتصل بنا",
+      "shop": "المتجر",
+      "products": "المنتجات",
+      "collections": "المجموعات",
+      "about": "من نحن",
+      "about_us": "من نحن",
+      "cart": "السلة",
+      "search": "البحث",
+      "account": "حسابي",
+      "spare_parts": "قطع الغيار",
+      "categories": "الفئات",
+      "brands": "الماركات",
+      "new_arrivals": "وصل حديثاً",
+      "sale": "تخفيضات",
+      "services": "الخدمات"
+    },
+    "password_page": {
+      "login_form_heading": "الدخول إلى المتجر باستخدام كلمة المرور:",
+      "login_password_button": "الدخول باستخدام كلمة المرور",
+      "login_form_password_label": "كلمة المرور",
+      "login_form_password_placeholder": "كلمة المرور الخاصة بك",
+      "login_form_error": "كلمة مرور خاطئة!",
+      "login_form_submit": "دخول",
+      "admin_link_html": "هل أنت صاحب المتجر؟ <a href=\"/admin\" class=\"link underlined-link\">سجل الدخول هنا</a>",
+      "powered_by_shopify_html": "هذا المتجر مدعوم من {{ shopify }}"
+    },
+    "shop": {
+      "name": "متجر قطع الغيار",
+      "tagline": "أفضل قطع الغيار لسيارتك",
+      "welcome": "مرحباً بكم في متجرنا",
+      "featured_products": "المنتجات المميزة",
+      "new_arrivals": "وصل حديثاً",
+      "best_sellers": "الأكثر مبيعاً",
+      "on_sale": "عروض وتخفيضات",
+      "all_products": "جميع المنتجات",
+      "categories": "الفئات",
+      "brands": "الماركات",
+      "special_offers": "عروض خاصة",
+      "clearance": "تصفية",
+      "new_products": "منتجات جديدة",
+      "trending": "الأكثر رواجاً"
+    },
+    "common": {
+      "view_all": "عرض الكل",
+      "learn_more": "اعرف المزيد",
+      "shop_now": "تسوق الآن",
+      "buy_now": "اشترِ الآن",
+      "add_to_wishlist": "أضف إلى قائمة الأمنيات",
+      "compare": "قارن",
+      "share": "مشاركة",
+      "close": "إغلاق",
+      "back": "رجوع",
+      "next": "التالي",
+      "previous": "السابق",
+      "loading": "جاري التحميل...",
+      "error": "خطأ",
+      "success": "نجح",
+      "warning": "تحذير",
+      "info": "معلومات",
+      "confirm": "تأكيد",
+      "cancel": "إلغاء",
+      "delete": "حذف",
+      "edit": "تعديل",
+      "save": "حفظ",
+      "update": "تحديث",
+      "submit": "إرسال",
+      "reset": "إعادة تعيين",
+      "filter": "تصفية",
+      "sort": "ترتيب",
+      "show": "عرض",
+      "hide": "إخفاء",
+      "expand": "توسيع",
+      "collapse": "طي",
+      "more": "المزيد",
+      "less": "أقل",
+      "yes": "نعم",
+      "no": "لا",
+      "or": "أو",
+      "and": "و",
+      "of": "من",
+      "by": "بواسطة",
+      "in": "في",
+      "for": "لـ",
+      "with": "مع",
+      "to": "إلى",
+      "from": "من",
+      "per": "لكل",
+      "off": "خصم",
+      "free": "مجاني",
+      "new": "جديد",
+      "sale": "تخفيض",
+      "hot": "ساخن",
+      "limited": "محدود",
+      "exclusive": "حصري",
+      "featured": "مميز",
+      "popular": "شائع",
+      "trending": "رائج",
+      "recommended": "موصى به"
+    },
+    "social": {
+      "alt_text": {
+        "share_on_facebook": "مشاركة على فيسبوك",
+        "share_on_twitter": "مشاركة على X",
+        "share_on_pinterest": "تثبيت على Pinterest"
+      },
+      "links": {
+        "twitter": "X (تويتر)",
+        "facebook": "فيسبوك",
+        "pinterest": "Pinterest",
+        "instagram": "إنستغرام",
+        "tumblr": "Tumblr",
+        "snapchat": "سناب شات",
+        "youtube": "يوتيوب",
+        "vimeo": "Vimeo",
+        "tiktok": "تيك توك"
+      }
+    },
+    "continue_shopping": "متابعة التسوق",
+    "pagination": {
+      "label": "ترقيم الصفحات",
+      "page": "صفحة {{ number }}",
+      "next": "الصفحة التالية",
+      "previous": "الصفحة السابقة"
+    },
+    "search": {
+      "search": "بحث",
+      "reset": "مسح مصطلح البحث"
+    },
+    "cart": {
+      "view": "عرض السلة ({{ count }})",
+      "view_empty_cart": "عرض السلة",
+      "item_added": "تمت إضافة المنتج إلى سلتك"
+    },
+    "share": {
+      "close": "إغلاق المشاركة",
+      "copy_to_clipboard": "نسخ الرابط",
+      "share_url": "رابط",
+      "success_message": "تم نسخ الرابط إلى الحافظة"
+    },
+    "slider": {
+      "of": "من",
+      "next_slide": "التالي",
+      "previous_slide": "السابق",
+      "name": "شريط التمرير"
+    }
+  },
+  "newsletter": {
+    "label": "البريد الإلكتروني",
+    "success": "شكراً لاشتراكك",
+    "button_label": "اشترك"
+  },
+  "accessibility": {
+    "skip_to_text": "تخطي إلى المحتوى",
+    "skip_to_product_info": "تخطي إلى معلومات المنتج",
+    "close": "إغلاق",
+    "unit_price_separator": "لكل",
+    "vendor": "المورد:",
+    "error": "خطأ",
+    "refresh_page": "اختيار التحديد يؤدي إلى تحديث كامل للصفحة.",
+    "link_messages": {
+      "new_window": "يفتح في نافذة جديدة.",
+      "external": "يفتح موقع خارجي."
+    },
+    "loading": "جاري التحميل...",
+    "total_reviews": "إجمالي التقييمات",
+    "star_reviews_info": "{{ rating_value }} من {{ rating_max }} نجوم",
+    "collapsible_content_title": "محتوى قابل للطي",
+    "complementary_products": "قطع غيار متوافقة"
+  },
+  "spare_parts": {
+    "search": {
+      "select_vehicle": "اختر مركبتك",
+      "brand": "الماركة",
+      "model": "الموديل",
+      "trim": "الفئة",
+      "year": "السنة",
+      "select_brand": "اختر الماركة",
+      "select_model": "اختر الموديل",
+      "select_trim": "اختر الفئة",
+      "select_year": "اختر السنة",
+      "or": "أو",
+      "placeholder": "ابحث برقم القطعة أو الوصف...",
+      "label": "بحث",
+      "submit": "بحث في قطع الغيار"
+    },
+    "filters": {
+      "compatibility": "التوافق",
+      "part_type": "نوع القطعة",
+      "condition": "الحالة",
+      "new": "جديد",
+      "used": "مستعمل",
+      "refurbished": "مجدد"
+    },
+    "product": {
+      "part_number": "رقم القطعة",
+      "oem_number": "رقم المصنع الأصلي",
+      "compatible_vehicles": "المركبات المتوافقة",
+      "specifications": "المواصفات الفنية",
+      "warranty": "الضمان",
+      "availability": "التوفر",
+      "in_stock": "متوفر",
+      "out_of_stock": "غير متوفر",
+      "ships_in": "يشحن خلال",
+      "days": "أيام"
+    }
+  },
+  "blogs": {
+    "article": {
+      "blog": "المدونة",
+      "read_more_title": "اقرأ المزيد: {{ title }}",
+      "comments": {
+        "one": "{{ count }} تعليق",
+        "other": "{{ count }} تعليقات"
+      },
+      "moderated": "يرجى ملاحظة أن التعليقات تحتاج إلى موافقة قبل نشرها.",
+      "comment_form_title": "اترك تعليقاً",
+      "name": "الاسم",
+      "email": "البريد الإلكتروني",
+      "message": "التعليق",
+      "post": "نشر التعليق",
+      "back_to_blog": "العودة إلى المدونة",
+      "share": "مشاركة هذا المقال",
+      "success": "تم نشر تعليقك بنجاح! شكراً لك!",
+      "success_moderated": "تم نشر تعليقك بنجاح. سننشره قريباً، حيث أن مدونتنا خاضعة للإشراف."
+    }
+  },
+  "onboarding": {
+    "product_title": "مثال على عنوان المنتج",
+    "collection_title": "اسم مجموعتك"
+  },
+  "homepage": {
+    "sections": {
+      "hero": {
+        "title": "مرحباً بكم في متجر قطع الغيار",
+        "subtitle": "أفضل قطع الغيار لسيارتك",
+        "button": "تسوق الآن"
+      },
+      "features": {
+        "quality": "جودة عالية",
+        "warranty": "ضمان أصلي",
+        "delivery": "توصيل سريع",
+        "support": "دعم فني"
+      },
+      "categories": {
+        "title": "الفئات",
+        "engine_parts": "قطع المحرك",
+        "brake_parts": "قطع الفرامل",
+        "suspension": "نظام التعليق",
+        "electrical": "القطع الكهربائية",
+        "filters": "الفلاتر",
+        "oils": "الزيوت"
+      },
+      "brands": {
+        "title": "الماركات التي نتعامل معها",
+        "view_all": "عرض جميع الماركات"
+      },
+      "testimonials": {
+        "title": "آراء العملاء",
+        "subtitle": "ماذا يقول عملاؤنا عنا"
+      },
+      "contact": {
+        "title": "اتصل بنا",
+        "subtitle": "نحن هنا لمساعدتك",
+        "phone": "الهاتف",
+        "email": "البريد الإلكتروني",
+        "address": "العنوان",
+        "working_hours": "ساعات العمل"
+      }
+    }
+  },
+  "products": {
+    "product": {
+      "add_to_cart": "أضف إلى السلة",
+      "description": "الوصف",
+      "specifications": "المواصفات",
+      "compatibility": "التوافق",
+      "installation_guide": "دليل التركيب",
+      "warranty_support": "الضمان والدعم",
+      "shipping_returns": "الشحن والإرجاع",
+      "reviews": "التقييمات",
+      "ask_question": "اسأل سؤال",
+      "in_stock": "متوفر",
+      "out_of_stock": "نفد المخزون",
+      "sku": "رمز المنتج",
+      "barcode": "الباركود",
+      "weight": "الوزن",
+      "dimensions": "الأبعاد",
+      "on_sale": "تخفيض",
+      "product_variants": "متغيرات المنتج",
+      "quantity": {
+        "label": "الكمية",
+        "input_label": "الكمية لـ {{ product }}",
+        "increase": "زيادة الكمية لـ {{ product }}",
+        "decrease": "تقليل الكمية لـ {{ product }}",
+        "minimum_of": "الحد الأدنى من {{ quantity }}",
+        "maximum_of": "الحد الأقصى من {{ quantity }}",
+        "multiples_of": "الزيادات من {{ quantity }}",
+        "in_cart_html": "<span class=\"quantity-cart\">{{ quantity }}</span> في السلة"
+      },
+      "price": {
+        "from_price_html": "من {{ price }}",
+        "regular_price": "السعر العادي",
+        "sale_price": "سعر البيع",
+        "unit_price": "سعر الوحدة"
+      },
+      "selling_plans": {
+        "label": "خطط البيع",
+        "subscription": "اشتراك",
+        "one_time_purchase": "شراء لمرة واحدة",
+        "save": "وفر",
+        "delivery_frequency": "تكرار التسليم"
+      },
+      "share": "مشاركة هذا المنتج",
+      "sold_out": "نفذ المخزون",
+      "unavailable": "غير متوفر",
+      "vendor": "المورد",
+      "video_exit_message": "{{ title }} يفتح فيديو ملء الشاشة في نفس النافذة.",
+      "xr_button": "عرض في مساحتك",
+      "xr_button_label": "عرض في مساحتك، يحمل العنصر في نافذة الواقع المعزز",
+      "pickup_availability": {
+        "view_store_info": "عرض معلومات المتجر",
+        "check_other_stores": "التحقق من التوفر في متاجر أخرى",
+        "pick_up_available": "الاستلام متاح",
+        "pick_up_available_at_html": "الاستلام متاح في <span class=\"color-foreground\">{{ location_name }}</span>",
+        "pick_up_unavailable_at_html": "الاستلام غير متاح حالياً في <span class=\"color-foreground\">{{ location_name }}</span>",
+        "unavailable": "لا يمكن تحميل توفر الاستلام",
+        "refresh": "تحديث"
+      },
+      "media": {
+        "open_media": "فتح الوسائط {{ index }} في مشاهد الطريقة",
+        "play_model": "تشغيل عارض ثلاثي الأبعاد",
+        "play_video": "تشغيل الفيديو",
+        "gallery_viewer": "عارض المعرض",
+        "load_image": "تحميل الصورة {{ index }} في عرض المعرض",
+        "load_model": "تحميل النموذج ثلاثي الأبعاد {{ index }} في عرض المعرض",
+        "load_video": "تشغيل الفيديو {{ index }} في عرض المعرض",
+        "image_available": "الصورة {{ index }} متاحة الآن في عرض المعرض"
+      },
+      "view_full_details": "عرض التفاصيل الكاملة",
+      "include_taxes": "شامل الضريبة.",
+      "shipping_policy_html": "<a href=\"{{ link }}\">الشحن</a> محسوب عند الدفع."
+    },
+    "modal": {
+      "label": "معرض الوسائط"
+    },
+    "facets": {
+      "apply": "تطبيق",
+      "clear": "مسح",
+      "clear_all": "مسح الكل",
+      "from": "من",
+      "filter_and_sort": "التصفية والترتيب",
+      "filter_by_label": "تصفية:",
+      "filter_button": "تصفية",
+      "filters_selected": {
+        "one": "{{ count }} محدد",
+        "other": "{{ count }} محدد"
+      },
+      "filter_selected_accessibility": "{{ type }} ({{ count }} مرشحات محددة)",
+      "show_more": "عرض المزيد",
+      "show_less": "عرض أقل",
+      "max_price": "أعلى سعر هو {{ price }}",
+      "product_count": {
+        "one": "{{ product_count }} من {{ count }} منتج",
+        "other": "{{ product_count }} من {{ count }} منتجات"
+      },
+      "product_count_simple": {
+        "one": "{{ count }} منتج",
+        "other": "{{ count }} منتجات"
+      },
+      "reset": "إعادة تعيين",
+      "sort_button": "ترتيب",
+      "sort_by_label": "ترتيب حسب:",
+      "to": "إلى",
+      "clear_filter": "مسح التصفية"
+    }
+  },
+  "templates": {
+    "search": {
+      "no_results": "لم يتم العثور على نتائج لـ \"{{ terms }}\". تحقق من الإملاء أو استخدم كلمة أو عبارة مختلفة.",
+      "results_with_count": {
+        "one": "{{ count }} نتيجة",
+        "other": "{{ count }} نتائج"
+      },
+      "title": "نتائج البحث",
+      "page": "صفحة",
+      "products": "المنتجات",
+      "search_for": "البحث عن \"{{ terms }}\"",
+      "results_with_count_and_term": {
+        "one": "{{ count }} نتيجة موجودة لـ \"{{ terms }}\"",
+        "other": "{{ count }} نتائج موجودة لـ \"{{ terms }}\""
+      },
+      "search_by_part_number": "البحث برقم القطعة"
+    },
+    "cart": {
+      "cart": "السلة"
+    },
+    "contact": {
+      "form": {
+        "name": "الاسم",
+        "email": "البريد الإلكتروني",
+        "phone": "رقم الهاتف",
+        "comment": "التعليق",
+        "send": "إرسال",
+        "post_success": "شكراً لتواصلك معنا. سنرد عليك في أقرب وقت ممكن.",
+        "error_heading": "يرجى تعديل ما يلي:"
+      }
+    },
+    "404": {
+      "title": "الصفحة غير موجودة",
+      "subtext": "404"
+    }
+  },
+  "sections": {
+    "image_banner": {
+      "heading": "بانر الصور",
+      "description": "قدم للعملاء تفاصيل حول صورة البانر أو المحتوى في القالب",
+      "shop_all": "تسوق الكل",
+      "learn_more": "اعرف المزيد",
+      "shop_now": "تسوق الآن"
+    },
+    "rich_text": {
+      "heading": "تحدث عن علامتك التجارية",
+      "description": "شارك المعلومات حول علامتك التجارية مع عملائك. صف منتجًا أو أعلن عن العروض أو رحب بالعملاء في متجرك",
+      "button_label": "زر"
+    },
+    "multicolumn": {
+      "title": "عناوين متعددة",
+      "column": "عمود",
+      "column_text": "اجمع النص مع صورة للتركيز على المنتج أو المجموعة أو منشور المدونة المختار. أضف تفاصيل حول التوفر أو النمط أو حتى قدم مراجعة",
+      "button_label": "زر",
+      "genuine_parts": "قطع أصلية",
+      "genuine_parts_description": "جميع قطع الغيار لدينا أصلية أو بديلة عالية الجودة تلبي أو تتجاوز مواصفات الشركة المصنعة",
+      "expert_support": "دعم الخبراء",
+      "expert_support_description": "خبراؤنا الفنيون متاحون لمساعدتك في العثور على القطع المناسبة وتقديم إرشادات التركيب",
+      "fast_shipping": "شحن سريع",
+      "fast_shipping_description": "شحن سريع لجميع أنحاء المملكة"
+    },
+    "collage": {
+      "heading": "مجموعة الوسائط المتعددة",
+      "view_all": "عرض الكل"
+    },
+    "video": {
+      "heading": "فيديو",
+      "cover_image": "صورة الغلاف",
+      "description": "صف الفيديو"
+    },
+    "header": {
+      "announcement": "إعلان",
+      "menu": "القائمة",
+      "cart_count": {
+        "one": "{{ count }} عنصر",
+        "other": "{{ count }} عناصر"
+      }
+    },
+    "cart": {
+      "title": "سلتك",
+      "caption": "عناصر السلة",
+      "remove_title": "إزالة {{ title }}",
+      "subtotal": "المجموع الفرعي",
+      "new_subtotal": "المجموع الفرعي الجديد",
+      "note": "ملاحظات الطلب",
+      "checkout": "الدفع",
+      "empty": "سلتك فارغة",
+      "cart_error": "حدث خطأ أثناء تحديث سلتك. يرجى المحاولة مرة أخرى.",
+      "cart_quantity_error_html": "يمكنك فقط إضافة {{ quantity }} من هذا العنصر إلى سلتك.",
+      "taxes_and_shipping_policy_at_checkout_html": "الضرائب و<a href=\"{{ link }}\">الشحن</a> محسوبة عند الدفع",
+      "taxes_included_but_shipping_at_checkout": "شامل الضريبة والشحن محسوب عند الدفع",
+      "taxes_included_and_shipping_policy_html": "شامل الضريبة. <a href=\"{{ link }}\">الشحن</a> محسوب عند الدفع.",
+      "taxes_and_shipping_at_checkout": "الضرائب والشحن محسوبة عند الدفع",
+      "headings": {
+        "product": "المنتج",
+        "price": "السعر",
+        "total": "المجموع",
+        "quantity": "الكمية"
+      },
+      "update": "تحديث",
+      "login": {
+        "title": "لديك حساب؟",
+        "paragraph_html": "<a href=\"{{ link }}\" class=\"link underlined-link\">سجل الدخول</a> للدفع بشكل أسرع."
+      }
+    },
+    "footer": {
+      "payment": "طرق الدفع"
+    },
+    "featured_blog": {
+      "view_all": "عرض الكل",
+      "onboarding_title": "منشور المدونة",
+      "onboarding_content": "امنح عملاءك ملخصًا عن منشور مدونتك"
+    },
+    "featured_collection": {
+      "view_all": "عرض الكل",
+      "view_all_label": "عرض جميع المنتجات في مجموعة {{ collection_name }}",
+      "title": "المنتجات المميزة",
+      "featured_products": "منتجات مميزة",
+      "shop_now": "تسوق الآن",
+      "add_to_cart": "أضف إلى السلة",
+      "quick_add": "إضافة سريعة",
+      "choose_options": "اختر الخيارات",
+      "view_product": "عرض المنتج",
+      "from": "من",
+      "sold_out": "نفد المخزون",
+      "on_sale": "تخفيض",
+      "new": "جديد",
+      "limited": "محدود",
+      "best_seller": "الأكثر مبيعاً"
+    },
+    "collection_list": {
+      "view_all": "عرض الكل"
+    },
+    "collection_template": {
+      "title": "المجموعة",
+      "empty": "لم يتم العثور على منتجات",
+      "use_fewer_filters_html": "استخدم مرشحات أقل أو <a class=\"{{ class }}\" href=\"{{ link }}\">مسح الكل</a>"
+    },
+    "video": {
+      "load_video": "تحميل الفيديو: {{ description }}"
+    },
+    "slideshow": {
+      "load_slide": "تحميل الشريحة",
+      "previous_slideshow": "الشريحة السابقة",
+      "next_slideshow": "الشريحة التالية",
+      "pause_slideshow": "إيقاف عرض الشرائح مؤقتًا",
+      "play_slideshow": "تشغيل عرض الشرائح",
+      "carousel": "دائري",
+      "slide": "شريحة"
+    },
+    "page": {
+      "title": "عنوان الصفحة"
+    },
+    "parts_specifications": {
+      "heading": "المواصفات الفنية",
+      "part_number": "رقم القطعة",
+      "compatibility": "التوافق",
+      "dimensions": "الأبعاد",
+      "weight": "الوزن",
+      "material": "المادة",
+      "warranty": "الضمان"
+    }
+  },
+  "spare_parts": {
+    "search": {
+      "placeholder": "ابحث برقم القطعة أو الموديل أو الوصف...",
+      "by_part_number": "البحث برقم القطعة",
+      "by_vehicle": "البحث حسب السيارة",
+      "advanced_search": "بحث متقدم"
+    },
+    "product": {
+      "specifications": "المواصفات",
+      "compatibility": "التوافق",
+      "installation_guide": "دليل التركيب",
+      "warranty_support": "الضمان والدعم",
+      "oem_number": "رقم القطعة الأصلية",
+      "aftermarket_number": "رقم القطعة البديلة",
+      "condition": "الحالة",
+      "new": "جديد",
+      "used": "مستعمل",
+      "refurbished": "مجدد"
+    },
+    "categories": {
+      "engine_parts": "قطع المحرك",
+      "transmission": "ناقل الحركة",
+      "electrical": "القطع الكهربائية",
+      "suspension": "نظام التعليق",
+      "brakes": "الفرامل",
+      "cooling_system": "نظام التبريد",
+      "exhaust": "نظام العادم",
+      "body_parts": "قطع الهيكل",
+      "interior": "القطع الداخلية"
+    },
+    "filters": {
+      "make": "الصانع",
+      "model": "الموديل",
+      "year": "السنة",
+      "category": "الفئة",
+      "price_range": "نطاق السعر",
+      "availability": "التوفر",
+      "in_stock": "متوفر",
+      "out_of_stock": "نفذ المخزون"
+    },
+    "messages": {
+      "genuine_parts": "جميع قطع الغيار لدينا أصلية أو بديلة عالية الجودة تلبي أو تتجاوز مواصفات الشركة المصنعة.",
+      "expert_support": "خبراؤنا الفنيون متاحون لمساعدتك في العثور على القطع المناسبة وتقديم إرشادات التركيب.",
+      "fast_shipping": "شحن سريع لجميع أنحاء المملكة العربية السعودية",
+      "return_policy": "سياسة إرجاع سهلة خلال 30 يومًا"
+    }
+  },
+  "localization": {
+    "country_label": "الدولة/المنطقة",
+    "language_label": "اللغة",
+    "update_language": "تحديث اللغة",
+    "update_country": "تحديث الدولة/المنطقة"
+  },
+  "customer": {
+    "account": {
+      "title": "الحساب",
+      "details": "تفاصيل الحساب",
+      "view_addresses": "عرض العناوين",
+      "return": "العودة إلى تفاصيل الحساب"
+    },
+    "account_fallback": "الحساب",
+    "activate_account": {
+      "title": "تفعيل الحساب",
+      "subtext": "أنشئ كلمة مرور لتفعيل حسابك.",
+      "password": "كلمة المرور",
+      "password_confirm": "تأكيد كلمة المرور",
+      "submit": "تفعيل الحساب",
+      "cancel": "رفض الدعوة"
+    },
+    "addresses": {
+      "title": "العناوين",
+      "default": "افتراضي",
+      "add_new": "إضافة عنوان جديد",
+      "edit_address": "تعديل العنوان",
+      "first_name": "الاسم الأول",
+      "last_name": "اسم العائلة",
+      "company": "الشركة",
+      "address1": "العنوان 1",
+      "address2": "العنوان 2",
+      "city": "المدينة",
+      "country": "الدولة/المنطقة",
+      "province": "المحافظة",
+      "zip": "الرمز البريدي",
+      "phone": "الهاتف",
+      "set_default": "تعيين كعنوان افتراضي",
+      "add": "إضافة عنوان",
+      "update": "تحديث العنوان",
+      "cancel": "إلغاء",
+      "edit": "تعديل",
+      "delete": "حذف",
+      "delete_confirm": "هل أنت متأكد من رغبتك في حذف هذا العنوان؟"
+    },
+    "log_in": "تسجيل الدخول",
+    "log_out": "تسجيل الخروج",
+    "login_page": {
+      "cancel": "إلغاء",
+      "create_account": "إنشاء حساب",
+      "email": "البريد الإلكتروني",
+      "forgot_password": "هل نسيت كلمة المرور؟",
+      "guest_continue": "المتابعة",
+      "guest_title": "المتابعة كضيف",
+      "password": "كلمة المرور",
+      "title": "تسجيل الدخول",
+      "sign_in": "تسجيل الدخول",
+      "submit": "إرسال"
+    },
+    "orders": {
+      "title": "تاريخ الطلبات",
+      "order_number": "الطلب",
+      "order_number_link": "رقم الطلب {{ number }}",
+      "date": "التاريخ",
+      "payment_status": "حالة الدفع",
+      "fulfillment_status": "حالة التنفيذ",
+      "total": "المجموع",
+      "none": "لم تقم بأي طلبات بعد."
+    },
+    "recover_password": {
+      "title": "إعادة تعيين كلمة المرور",
+      "subtext": "سنرسل لك بريدًا إلكترونيًا لإعادة تعيين كلمة المرور",
+      "success": "لقد أرسلنا لك بريدًا إلكترونيًا يحتوي على رابط لتحديث كلمة المرور."
+    },
+    "register": {
+      "title": "إنشاء حساب",
+      "first_name": "الاسم الأول",
+      "last_name": "اسم العائلة",
+      "email": "البريد الإلكتروني",
+      "password": "كلمة المرور",
+      "submit": "إنشاء"
+    },
+    "reset_password": {
+      "title": "إعادة تعيين كلمة مرور الحساب",
+      "subtext": "أدخل كلمة مرور جديدة",
+      "password": "كلمة المرور",
+      "password_confirm": "تأكيد كلمة المرور",
+      "submit": "إعادة تعيين كلمة المرور"
+    },
+    "order": {
+      "title": "الطلب {{ name }}",
+      "date_html": "تم الطلب في {{ date }}",
+      "cancelled_html": "تم إلغاء الطلب في {{ date }}",
+      "cancelled_reason": "السبب: {{ reason }}",
+      "billing_address": "عنوان الفواتير",
+      "payment_status": "حالة الدفع",
+      "shipping_address": "عنوان الشحن",
+      "fulfillment_status": "حالة التنفيذ",
+      "discount": "خصم",
+      "shipping": "الشحن",
+      "tax": "الضريبة",
+      "product": "المنتج",
+      "sku": "SKU",
+      "price": "السعر",
+      "quantity": "الكمية",
+      "total": "المجموع",
+      "fulfilled_at_html": "تم التنفيذ {{ date }}",
+      "track_shipment": "تتبع الشحنة",
+      "tracking_url": "رابط التتبع",
+      "tracking_company": "الناقل",
+      "tracking_number": "رقم التتبع",
+      "subtotal": "المجموع الفرعي",
+      "total_duties": "الرسوم",
+      "total_refunded": "تم الاسترداد"
+    }
+  },
+  "gift_cards": {
+    "issued": {
+      "title": "إليك رصيد بطاقة الهدايا بقيمة {{ value }} لـ {{ shop }}!",
+      "subtext": "بطاقة الهدايا الخاصة بك",
+      "gift_card_code": "رمز بطاقة الهدايا",
+      "shop_link": "متابعة التسوق",
+      "remaining_html": "المتبقي {{ balance }}",
+      "add_to_apple_wallet": "إضافة إلى Apple Wallet",
+      "qr_image_alt": "رمز QR — امسحه لاسترداد بطاقة الهدايا",
+      "copy_code": "نسخ الرمز",
+      "expired": "منتهي الصلاحية",
+      "copy_code_success": "تم نسخ الرمز بنجاح",
+      "print_gift_card": "طباعة"
+    }
+  },
+  "product_names": {
+    "brake_pads": "وسادات الفرامل",
+    "oil_filter": "فلتر الزيت",
+    "air_filter": "فلتر الهواء",
+    "spark_plugs": "شمعات الإشعال",
+    "battery": "البطارية",
+    "alternator": "المولد",
+    "starter_motor": "بادئ الحركة",
+    "radiator": "الرادياتير",
+    "water_pump": "مضخة المياه",
+    "fuel_pump": "مضخة الوقود",
+    "brake_disc": "قرص الفرامل",
+    "brake_fluid": "زيت الفرامل",
+    "engine_oil": "زيت المحرك",
+    "transmission_fluid": "زيت ناقل الحركة",
+    "coolant": "سائل التبريد",
+    "windshield_wipers": "مساحات الزجاج",
+    "headlight": "المصباح الأمامي",
+    "tail_light": "المصباح الخلفي",
+    "turn_signal": "إشارة الانعطاف",
+    "mirror": "المرآة",
+    "door_handle": "مقبض الباب",
+    "seat_cover": "غطاء المقعد",
+    "floor_mat": "سجادة الأرضية",
+    "steering_wheel": "عجلة القيادة",
+    "clutch": "القابض",
+    "gearbox": "صندوق التروس",
+    "suspension": "نظام التعليق",
+    "shock_absorber": "ممتص الصدمات",
+    "exhaust": "العادم",
+    "muffler": "كاتم الصوت",
+    "catalytic_converter": "المحول الحفاز",
+    "timing_belt": "سير التوقيت",
+    "serpentine_belt": "السير المتعرج",
+    "thermostat": "الثرموستات",
+    "ignition_coil": "ملف الإشعال",
+    "fuel_injector": "حاقن الوقود",
+    "oxygen_sensor": "حساس الأكسجين",
+    "cam_sensor": "حساس الكامة",
+    "crank_sensor": "حساس العمود المرفقي",
+    "wheel_bearing": "محمل العجلة",
+    "cv_joint": "وصلة السرعة الثابتة",
+    "drive_shaft": "عمود الإدارة",
+    "differential": "الدفرنشل",
+    "example_product": "منتج مثال",
+    "golden_yellow_wax": "قطعة من الشمع الأصفر الذهبي",
+    "purple_wax": "قطعة من الشمع الأرجواني",
+    "ski_wax": "شمع التزلج",
+    "snowboard": "لوح التزلج",
+    "3p_fulfilled_snowboard": "لوح التزلج 3p المكتمل",
+    "collection_snowboard_hydrogen": "لوح التزلج: هيدروجين",
+    "collection_snowboard_liquid": "لوح التزلج: سائل",
+    "collection_snowboard_oxygen": "لوح التزلج: أكسجين",
+    "multi_managed_snowboard": "لوح التزلج متعدد الإدارة",
+    "multi_location_snowboard": "لوح التزلج متعدد المواقع",
+    "compare_at_price_snowboard": "لوح التزلج للمقارنة",
+    "hidden_snowboard": "لوح التزلج المخفي",
+    "inventory_not_tracked_snowboard": "لوح التزلج غير المتتبع",
+    "complete_snowboard": "لوح التزلج الكامل",
+    "gift_card": "بطاقة هدية",
+    "sample_product": "منتج عينة",
+    "wax": "شمع"
+  }
+}

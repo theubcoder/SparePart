@@ -1,0 +1,28 @@
+# Shopify Theme Kit Configuration
+# 
+# Instructions:
+# 1. Replace YOUR_API_PASSWORD with your actual Shopify private app password
+# 2. Replace YOUR_STORE_URL with your store's myshopify.com URL
+# 3. Replace YOUR_THEME_ID with the theme ID you want to work with
+#
+# To get these values:
+# 1. In your Shopify admin, go to Apps > Manage private apps
+# 2. Create a private app with Theme permissions
+# 3. Use the password and store URL from there
+# 4. Run 'theme get --list' to see available theme IDs
+
+development:
+  password: YOUR_API_PASSWORD
+  theme_id: YOUR_THEME_ID
+  store: YOUR_STORE_URL
+  directory: .
+  ignore_files:
+    - config/settings_data.json
+
+production:
+  password: YOUR_API_PASSWORD
+  theme_id: YOUR_THEME_ID
+  store: YOUR_STORE_URL
+  directory: .
+  ignore_files:
+    - config/settings_data.json

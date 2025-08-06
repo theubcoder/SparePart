@@ -1,0 +1,35 @@
+{%- comment -%}
+  Language availability notice for spare parts theme
+  Shows a notice to let users know the site is available in both English and Arabic
+{%- endcomment -%}
+
+{%- if settings.show_language_notice -%}
+  <div class="language-notice color-{{ section.settings.color_scheme }} gradient">
+    <div class="page-width">
+      <p class="language-notice__text">
+        {%- if request.locale.iso_code == 'ar' -%}
+          <span>This site is also available in <a href="{{ request.path | replace: '/ar', '/en' }}" class="link link--text">English</a></span>
+        {%- else -%}
+          <span>هذا الموقع متوفر أيضاً باللغة <a href="{{ request.path | replace: '/en', '/ar' }}" class="link link--text">العربية</a></span>
+        {%- endif -%}
+      </p>
+    </div>
+  </div>
+{%- endif -%}
+
+<style>
+  .language-notice {
+    padding: 0.5rem 0;
+    text-align: center;
+    font-size: 1.3rem;
+    border-bottom: 0.1rem solid rgba(var(--color-foreground), 0.08);
+  }
+  
+  .language-notice__text {
+    margin: 0;
+  }
+  
+  .language-notice .link {
+    text-decoration: underline;
+  }
+</style>

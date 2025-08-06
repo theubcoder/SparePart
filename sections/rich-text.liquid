@@ -29,7 +29,13 @@
                   style="--animation-order: {{ forloop.index }};"
                 {% endif %}
               >
-                {{ block.settings.heading }}
+                {%- liquid
+                  if block.settings.heading == 'Talk about your brand'
+                    render 'bilingual-content', content_key: 'talk_about_brand_heading', type: 'title'
+                  else
+                    echo block.settings.heading
+                  endif
+                -%}
               </h2>
             {%- when 'caption' -%}
               <p
@@ -51,7 +57,13 @@
                   style="--animation-order: {{ forloop.index }};"
                 {% endif %}
               >
-                {{ block.settings.text }}
+                {%- liquid
+                  if block.settings.text contains 'Share information about your brand'
+                    render 'bilingual-content', content_key: 'talk_about_brand_text', type: 'html'
+                  else
+                    echo block.settings.text
+                  endif
+                -%}
               </div>
             {%- when 'button' -%}
               <div

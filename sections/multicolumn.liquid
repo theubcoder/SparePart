@@ -120,10 +120,36 @@
               {%- endif -%}
               <div class="multicolumn-card__info">
                 {%- if block.settings.title != blank -%}
-                  <h3 class="inline-richtext">{{ block.settings.title }}</h3>
+                  <h3 class="inline-richtext">
+                    {%- liquid
+                      # Check for specific product page content
+                      if block.settings.title == 'Genuine Parts'
+                        render 'bilingual-content', content_key: 'genuine_parts_title', type: 'title'
+                      elsif block.settings.title == 'Expert Support'
+                        render 'bilingual-content', content_key: 'expert_support_title', type: 'title'
+                      elsif block.settings.title == 'Column'
+                        render 'bilingual-content', content_key: 'column_title', type: 'title'
+                      else
+                        echo block.settings.title
+                      endif
+                    -%}
+                  </h3>
                 {%- endif -%}
                 {%- if block.settings.text != blank -%}
-                  <div class="rte">{{ block.settings.text }}</div>
+                  <div class="rte">
+                    {%- liquid
+                      # Check for specific product page content
+                      if block.settings.text contains 'genuine OEM or high-quality aftermarket'
+                        render 'bilingual-content', content_key: 'genuine_parts_text', type: 'html'
+                      elsif block.settings.text contains 'technical experts are available'
+                        render 'bilingual-content', content_key: 'expert_support_text', type: 'html'
+                      elsif block.settings.text contains 'Pair text with an image'
+                        render 'bilingual-content', content_key: 'column_text', type: 'html'
+                      else
+                        echo block.settings.text
+                      endif
+                    -%}
+                  </div>
                 {%- endif -%}
                 {%- if block.settings.link_label != blank -%}
                   <a
