@@ -12,15 +12,6 @@
     "banner_slider": {
       "type": "banner-slider",
       "blocks": {
-        "slide_1": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/banner-3.jpg",
-            "image_alt": "Banner 1 - Special Offers",
-            "link": "shopify://collections/all",
-            "link_label": "Shop all products"
-          }
-        },
         "slide_2": {
           "type": "slide",
           "settings": {
@@ -28,6 +19,15 @@
             "image_alt": "Banner 2 - New Arrivals",
             "link": "shopify://collections/all",
             "link_label": "Shop new arrivals"
+          }
+        },
+        "slide_1": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/banner-3.jpg",
+            "image_alt": "Banner 1 - Special Offers",
+            "link": "shopify://collections/all",
+            "link_label": "Shop all products"
           }
         },
         "slide_3": {
@@ -41,8 +41,8 @@
         }
       },
       "block_order": [
-        "slide_1",
         "slide_2",
+        "slide_1",
         "slide_3"
       ],
       "settings": {
