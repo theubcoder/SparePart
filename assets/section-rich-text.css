@@ -17,6 +17,41 @@
   width: 100%;
 }
 
+.rich-text__blocks.center {
+  text-align: center;
+}
+
+.rich-text__blocks.center * {
+  text-align: center !important;
+}
+
+/* Ensure center alignment for both LTR and RTL */
+[dir="rtl"] .rich-text__blocks.center,
+[dir="rtl"] .rich-text__blocks.center * {
+  text-align: center !important;
+}
+
+[lang="ar"] .rich-text__blocks.center,
+[lang="ar"] .rich-text__blocks.center * {
+  text-align: center !important;
+}
+
+.rich-text__blocks.left {
+  text-align: left;
+}
+
+.rich-text__blocks.right {
+  text-align: right;
+}
+
+[dir="rtl"] .rich-text__blocks.left {
+  text-align: right;
+}
+
+[dir="rtl"] .rich-text__blocks.right {
+  text-align: left;
+}
+
 @media screen and (min-width: 750px) {
   .rich-text__wrapper {
     width: 100%;
@@ -83,4 +118,32 @@
 
 .rich-text__blocks.right .rich-text__buttons {
   justify-content: flex-end;
+}
+
+/* Additional styles for proper center alignment */
+.center .rich-text__heading,
+.center .rich-text__text,
+.center .rich-text__text p,
+.center .rich-text__caption {
+  text-align: center !important;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Ensure RTL/Arabic text is also centered */
+[dir="rtl"] .center .rich-text__heading,
+[dir="rtl"] .center .rich-text__text,
+[dir="rtl"] .center .rich-text__text p,
+[dir="rtl"] .center .rich-text__caption,
+[lang="ar"] .center .rich-text__heading,
+[lang="ar"] .center .rich-text__text,
+[lang="ar"] .center .rich-text__text p,
+[lang="ar"] .center .rich-text__caption,
+html[dir="rtl"] .center .rich-text__heading,
+html[dir="rtl"] .center .rich-text__text,
+html[dir="rtl"] .center .rich-text__text p,
+html[dir="rtl"] .center .rich-text__caption {
+  text-align: center !important;
+  margin-left: auto;
+  margin-right: auto;
 }
