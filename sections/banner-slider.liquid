@@ -233,47 +233,9 @@
                 | image_tag:
                   loading: 'lazy',
                   widths: '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840',
-                  sizes: '100vw'
+                  sizes: '100vw',
+                  alt: block.settings.image.alt | default: block.settings.image_alt
               }}
-            {%- elsif forloop.index == 1 -%}
-              <img 
-                src="{{ 'banner-1.jpg' | asset_img_url: '1920x' }}"
-                srcset="{{ 'banner-1.jpg' | asset_img_url: '375x' }} 375w,
-                        {{ 'banner-1.jpg' | asset_img_url: '750x' }} 750w,
-                        {{ 'banner-1.jpg' | asset_img_url: '1100x' }} 1100w,
-                        {{ 'banner-1.jpg' | asset_img_url: '1500x' }} 1500w,
-                        {{ 'banner-1.jpg' | asset_img_url: '1920x' }} 1920w"
-                sizes="100vw"
-                alt="{% if request.locale.iso_code == 'ar' %}الشريحة 1{% else %}Banner 1{% endif %}" 
-                loading="{% if forloop.index == 1 %}eager{% else %}lazy{% endif %}"
-                width="1920" 
-                height="600">
-            {%- elsif forloop.index == 2 -%}
-              <img 
-                src="{{ 'banner-2.jpg' | asset_img_url: '1920x' }}"
-                srcset="{{ 'banner-2.jpg' | asset_img_url: '375x' }} 375w,
-                        {{ 'banner-2.jpg' | asset_img_url: '750x' }} 750w,
-                        {{ 'banner-2.jpg' | asset_img_url: '1100x' }} 1100w,
-                        {{ 'banner-2.jpg' | asset_img_url: '1500x' }} 1500w,
-                        {{ 'banner-2.jpg' | asset_img_url: '1920x' }} 1920w"
-                sizes="100vw"
-                alt="{% if request.locale.iso_code == 'ar' %}الشريحة 2{% else %}Banner 2{% endif %}" 
-                loading="lazy"
-                width="1920" 
-                height="600">
-            {%- elsif forloop.index == 3 -%}
-              <img 
-                src="{{ 'banner-3.jpg' | asset_img_url: '1920x' }}"
-                srcset="{{ 'banner-3.jpg' | asset_img_url: '375x' }} 375w,
-                        {{ 'banner-3.jpg' | asset_img_url: '750x' }} 750w,
-                        {{ 'banner-3.jpg' | asset_img_url: '1100x' }} 1100w,
-                        {{ 'banner-3.jpg' | asset_img_url: '1500x' }} 1500w,
-                        {{ 'banner-3.jpg' | asset_img_url: '1920x' }} 1920w"
-                sizes="100vw"
-                alt="{% if request.locale.iso_code == 'ar' %}الشريحة 3{% else %}Banner 3{% endif %}" 
-                loading="lazy"
-                width="1920" 
-                height="600">
             {%- else -%}
               {{ 'hero-apparel-1' | placeholder_svg_tag: 'placeholder-svg' }}
             {%- endif -%}
@@ -475,6 +437,12 @@
           "type": "image_picker",
           "id": "image",
           "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "image_alt",
+          "label": "Image alt text",
+          "info": "Describe the image for accessibility"
         },
         {
           "type": "url",

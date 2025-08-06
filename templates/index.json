@@ -6,6 +6,7 @@
         "slide_1": {
           "type": "slide",
           "settings": {
+            "image_alt": "Banner 1 - Special Offers",
             "link": "shopify://collections/all",
             "link_label": "Shop all products"
           }
@@ -13,15 +14,17 @@
         "slide_2": {
           "type": "slide",
           "settings": {
+            "image_alt": "Banner 2 - New Arrivals",
             "link": "shopify://collections/all",
-            "link_label": "Shop all products"
+            "link_label": "Shop new arrivals"
           }
         },
         "slide_3": {
           "type": "slide",
           "settings": {
+            "image_alt": "Banner 3 - Best Sellers",
             "link": "shopify://collections/all",
-            "link_label": "Shop all products"
+            "link_label": "Shop best sellers"
           }
         }
       },
