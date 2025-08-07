@@ -10,53 +10,109 @@
         </h2>
       </div>
     {% endif %}
-    
+
     <div class="marketplace-categories__grid">
       {% for block in section.blocks %}
         <a href="{{ block.settings.link }}" class="marketplace-category__item" {{ block.shopify_attributes }}>
           <div class="marketplace-category__circle">
             {% if block.settings.image != blank %}
-              {{ block.settings.image | image_url: width: 200 | image_tag: 
-                class: 'marketplace-category__image',
-                loading: 'lazy',
-                alt: block.settings.title 
+              {{
+                block.settings.image
+                | image_url: width: 200
+                | image_tag: class: 'marketplace-category__image', loading: 'lazy', alt: block.settings.title
               }}
             {% else %}
               <div class="marketplace-category__placeholder">
                 {% case block.type %}
                   {% when 'spare_parts' %}
-                    <svg class="icon icon-spare-parts" width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg
+                      class="icon icon-spare-parts"
+                      width="60"
+                      height="60"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
                       <path d="M12 2L13.09 8.26L19 7L15.5 11.5L20 16L14 17.5L15.5 23L11 19L6.5 23L8 17.5L2 16L6.5 11.5L3 7L8.91 8.26L12 2Z" fill="currentColor"/>
                     </svg>
                   {% when 'accessories' %}
-                    <svg class="icon icon-accessories" width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg
+                      class="icon icon-accessories"
+                      width="60"
+                      height="60"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
                       <path d="M9 2L7.17 4H4C2.9 4 2 4.9 2 6V18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6C22 4.9 21.1 4 20 4H16.83L15 2H9ZM12 17C9.24 17 7 14.76 7 12C7 9.24 9.24 7 12 7C14.76 7 17 9.24 17 12C17 14.76 14.76 17 12 17Z" fill="currentColor"/>
                     </svg>
                   {% when 'offers' %}
                     <span class="marketplace-category__percent">%</span>
                   {% when 'maintenance' %}
-                    <svg class="icon icon-maintenance" width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg
+                      class="icon icon-maintenance"
+                      width="60"
+                      height="60"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
                       <path d="M7 3H17C18.1 3 19 3.9 19 5V7C19 8.1 18.1 9 17 9H7C5.9 9 5 8.1 5 7V5C5 3.9 5.9 3 7 3ZM8 11H16C17.1 11 18 11.9 18 13V15C18 16.1 17.1 17 16 17H8C6.9 17 6 16.1 6 15V13C6 11.9 6.9 11 8 11ZM10 19H14C15.1 19 16 19.9 16 21V21C16 22.1 15.1 23 14 23H10C8.9 23 8 22.1 8 21V21C8 19.9 8.9 19 10 19Z" fill="currentColor"/>
                     </svg>
                   {% when 'car_care' %}
-                    <svg class="icon icon-car-care" width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg
+                      class="icon icon-car-care"
+                      width="60"
+                      height="60"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
                       <path d="M5 11L6.5 6.5H17.5L19 11M5 11H19M5 11V16H19V11M7 13H9M15 13H17M7 18V20M17 18V20" stroke="currentColor" stroke-width="2"/>
                     </svg>
                   {% when 'oils' %}
-                    <svg class="icon icon-oils" width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg
+                      class="icon icon-oils"
+                      width="60"
+                      height="60"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
                       <path d="M9 3V6H12V8H9L6 14V21H18V14L15 8H12V6H15V3H9Z" fill="currentColor"/>
                     </svg>
                   {% when 'tires' %}
-                    <svg class="icon icon-tires" width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg
+                      class="icon icon-tires"
+                      width="60"
+                      height="60"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
                       <circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="3"/>
                       <circle cx="12" cy="12" r="3" fill="currentColor"/>
                     </svg>
                   {% when 'floor_covering' %}
-                    <svg class="icon icon-floor" width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg
+                      class="icon icon-floor"
+                      width="60"
+                      height="60"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
                       <path d="M5 10L7 3L9 10L11 3L13 10L15 3L17 10L19 3L21 10V21H3V10L5 10Z" fill="currentColor"/>
                     </svg>
                   {% else %}
-                    <svg class="icon icon-default" width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg
+                      class="icon icon-default"
+                      width="60"
+                      height="60"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
                       <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
                     </svg>
                 {% endcase %}

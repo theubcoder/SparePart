@@ -3,11 +3,6 @@
   background: #ffffff;
 }
 
-.marketplace-categories__wrapper {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
 .marketplace-categories__header {
   text-align: left;
   margin-bottom: 40px;
@@ -201,7 +196,7 @@
 
 @media screen and (max-width: 750px) {
   .marketplace-categories-section {
-    padding: 40px 20px;
+    padding: 40px 0;
   }
   
   .marketplace-categories__title {
