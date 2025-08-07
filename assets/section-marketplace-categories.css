@@ -170,6 +170,12 @@
   text-transform: capitalize;
 }
 
+/* RTL support for Arabic */
+[dir="rtl"] .marketplace-category__title {
+  font-family: 'Arial', 'Tahoma', sans-serif;
+  text-transform: none;
+}
+
 /* Responsive Design */
 @media screen and (max-width: 1200px) {
   .marketplace-categories__grid {

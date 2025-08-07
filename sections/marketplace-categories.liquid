@@ -2,11 +2,15 @@
 
 <div class="marketplace-categories-section">
   <div class="page-width">
-    {% if section.settings.title != blank %}
+    {% if section.settings.title != blank or section.settings.title_arabic != blank %}
       <div class="marketplace-categories__header">
         <h2 class="marketplace-categories__title">
           <span class="marketplace-categories__icon">🛍️</span>
-          {{ section.settings.title }}
+          {%- if request.locale.iso_code == 'ar' and section.settings.title_arabic != blank -%}
+            {{ section.settings.title_arabic }}
+          {%- elsif section.settings.title != blank -%}
+            {{ section.settings.title }}
+          {%- endif -%}
         </h2>
       </div>
     {% endif %}
@@ -122,7 +126,13 @@
               <div class="marketplace-category__rays"></div>
             {% endif %}
           </div>
-          <h3 class="marketplace-category__title">{{ block.settings.title }}</h3>
+          <h3 class="marketplace-category__title">
+            {%- if request.locale.iso_code == 'ar' and block.settings.title_arabic != blank -%}
+              {{ block.settings.title_arabic }}
+            {%- else -%}
+              {{ block.settings.title }}
+            {%- endif -%}
+          </h3>
         </a>
       {% endfor %}
     </div>
@@ -139,7 +149,13 @@
       "type": "text",
       "id": "title",
       "default": "Marketplace Categories",
-      "label": "Section title"
+      "label": "Section title (English)"
+    },
+    {
+      "type": "text",
+      "id": "title_arabic",
+      "default": "فئات السوق",
+      "label": "Section title (Arabic)"
     }
   ],
   "blocks": [
@@ -152,6 +168,12 @@
           "id": "title",
           "default": "Spare Parts",
           "label": "Title"
+        },
+        {
+          "type": "text",
+          "id": "title_arabic",
+          "default": "قطع غيار",
+          "label": "Arabic Title"
         },
         {
           "type": "image_picker",
@@ -176,6 +198,12 @@
           "label": "Title"
         },
         {
+          "type": "text",
+          "id": "title_arabic",
+          "default": "اكسسوارات",
+          "label": "Arabic Title"
+        },
+        {
           "type": "image_picker",
           "id": "image",
           "label": "Image"
@@ -196,6 +224,12 @@
           "id": "title",
           "default": "Offers",
           "label": "Title"
+        },
+        {
+          "type": "text",
+          "id": "title_arabic",
+          "default": "عروض",
+          "label": "Arabic Title"
         },
         {
           "type": "image_picker",
@@ -220,6 +254,12 @@
           "label": "Title"
         },
         {
+          "type": "text",
+          "id": "title_arabic",
+          "default": "عروض الصيانة الدورية",
+          "label": "Arabic Title"
+        },
+        {
           "type": "image_picker",
           "id": "image",
           "label": "Image"
@@ -240,6 +280,12 @@
           "id": "title",
           "default": "CAR CARE",
           "label": "Title"
+        },
+        {
+          "type": "text",
+          "id": "title_arabic",
+          "default": "العناية بالسيارة",
+          "label": "Arabic Title"
         },
         {
           "type": "image_picker",
@@ -264,6 +310,12 @@
           "label": "Title"
         },
         {
+          "type": "text",
+          "id": "title_arabic",
+          "default": "زيوت",
+          "label": "Arabic Title"
+        },
+        {
           "type": "image_picker",
           "id": "image",
           "label": "Image"
@@ -286,6 +338,12 @@
           "label": "Title"
         },
         {
+          "type": "text",
+          "id": "title_arabic",
+          "default": "إطارات",
+          "label": "Arabic Title"
+        },
+        {
           "type": "image_picker",
           "id": "image",
           "label": "Image"
@@ -306,6 +364,12 @@
           "id": "title",
           "default": "Floor covering",
           "label": "Title"
+        },
+        {
+          "type": "text",
+          "id": "title_arabic",
+          "default": "أرضيات السيارة",
+          "label": "Arabic Title"
         },
         {
           "type": "image_picker",
