@@ -1,0 +1,258 @@
+.marketplace-categories-section {
+  padding: 60px 0;
+  background: #ffffff;
+}
+
+.marketplace-categories__wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.marketplace-categories__header {
+  text-align: left;
+  margin-bottom: 40px;
+}
+
+.marketplace-categories__title {
+  font-size: 32px;
+  font-weight: 600;
+  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0;
+}
+
+.marketplace-categories__icon {
+  font-size: 36px;
+}
+
+.marketplace-categories__grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 40px;
+  justify-items: center;
+}
+
+.marketplace-category__item {
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  width: 100%;
+  max-width: 160px;
+}
+
+.marketplace-category__item:hover {
+  transform: translateY(-5px);
+}
+
+.marketplace-category__circle {
+  width: 150px;
+  height: 150px;
+  background: #f5d63d;
+  background: linear-gradient(135deg, #f5d63d 0%, #e6c832 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(245, 214, 61, 0.3);
+  transition: all 0.3s ease;
+}
+
+.marketplace-category__item:hover .marketplace-category__circle {
+  box-shadow: 0 12px 30px rgba(245, 214, 61, 0.5);
+  transform: scale(1.05);
+}
+
+.marketplace-category__image {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+}
+
+.marketplace-category__placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #333;
+  z-index: 2;
+  position: relative;
+}
+
+.marketplace-category__placeholder svg {
+  width: 70px;
+  height: 70px;
+  color: #333;
+}
+
+/* Special styling for Offers category */
+.marketplace-category__percent {
+  font-size: 48px;
+  font-weight: bold;
+  color: #d32f2f;
+  z-index: 2;
+  position: relative;
+}
+
+/* Rays effect for Offers */
+.marketplace-category__rays {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 200%;
+  height: 200%;
+  transform: translate(-50%, -50%);
+  background: repeating-conic-gradient(
+    from 0deg at 50% 50%,
+    transparent 0deg,
+    rgba(255, 255, 255, 0.3) 5deg,
+    transparent 10deg,
+    transparent 20deg
+  );
+  animation: rotate 20s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+/* Specific circle colors for certain categories */
+.marketplace-category__item:nth-child(3) .marketplace-category__circle {
+  background: linear-gradient(135deg, #ffeb3b 0%, #ffc107 100%);
+}
+
+.marketplace-category__item:nth-child(7) .marketplace-category__circle,
+.marketplace-category__item:nth-child(8) .marketplace-category__circle {
+  background: linear-gradient(135deg, #f5d63d 0%, #e6c832 50%, #d4b52c 100%);
+  position: relative;
+  overflow: visible;
+}
+
+/* Rays pattern for Tires and Floor covering */
+.marketplace-category__item:nth-child(7) .marketplace-category__circle::before,
+.marketplace-category__item:nth-child(8) .marketplace-category__circle::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+  background: repeating-conic-gradient(
+    from 0deg at 50% 50%,
+    #f5d63d 0deg,
+    #e6c832 30deg,
+    #f5d63d 60deg
+  );
+  border-radius: 50%;
+  z-index: 0;
+}
+
+.marketplace-category__item:nth-child(7) .marketplace-category__placeholder,
+.marketplace-category__item:nth-child(8) .marketplace-category__placeholder {
+  z-index: 1;
+  position: relative;
+}
+
+.marketplace-category__title {
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+  text-align: center;
+  line-height: 1.4;
+  margin: 0;
+  text-transform: capitalize;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1200px) {
+  .marketplace-categories__grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+  }
+}
+
+@media screen and (max-width: 990px) {
+  .marketplace-categories__grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+  }
+  
+  .marketplace-category__circle {
+    width: 130px;
+    height: 130px;
+  }
+  
+  .marketplace-category__item {
+    max-width: 140px;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .marketplace-categories-section {
+    padding: 40px 20px;
+  }
+  
+  .marketplace-categories__title {
+    font-size: 24px;
+  }
+  
+  .marketplace-categories__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  
+  .marketplace-category__circle {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .marketplace-category__placeholder svg {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .marketplace-category__percent {
+    font-size: 40px;
+  }
+  
+  .marketplace-category__title {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .marketplace-categories__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+  
+  .marketplace-category__circle {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .marketplace-category__item {
+    max-width: 120px;
+  }
+  
+  .marketplace-category__placeholder svg {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .marketplace-category__percent {
+    font-size: 32px;
+  }
+}

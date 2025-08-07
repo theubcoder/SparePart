@@ -886,27 +886,73 @@ class SlideshowComponent extends SliderComponent {
   }
 
   onButtonClick(event) {
-    super.onButtonClick(event);
-    this.wasClicked = true;
+    // Add fade effect before slide transition
+    const currentSlideIndex = this.currentPage - 1;
+    const slides = this.slider.querySelectorAll('.slideshow__slide');
+    const currentSlide = slides[currentSlideIndex];
+    
+    // Add fade out class to current slide
+    if (currentSlide && !this.announcementBarSlider) {
+      currentSlide.classList.add('fade-out');
+      
+      setTimeout(() => {
+        super.onButtonClick(event);
+        this.wasClicked = true;
 
-    const isFirstSlide = this.currentPage === 1;
-    const isLastSlide = this.currentPage === this.sliderItemsToShow.length;
+        const isFirstSlide = this.currentPage === 1;
+        const isLastSlide = this.currentPage === this.sliderItemsToShow.length;
 
-    if (!isFirstSlide && !isLastSlide) {
+        if (!isFirstSlide && !isLastSlide) {
+          this.applyAnimationToAnnouncementBar(event.currentTarget.name);
+          currentSlide.classList.remove('fade-out');
+          return;
+        }
+
+        if (isFirstSlide && event.currentTarget.name === 'previous') {
+          this.slideScrollPosition =
+            this.slider.scrollLeft + this.sliderFirstItemNode.clientWidth * this.sliderItemsToShow.length;
+        } else if (isLastSlide && event.currentTarget.name === 'next') {
+          this.slideScrollPosition = 0;
+        }
+
+        this.setSlidePosition(this.slideScrollPosition);
+        this.applyAnimationToAnnouncementBar(event.currentTarget.name);
+        
+        // Remove fade out and add fade in to new slide
+        setTimeout(() => {
+          currentSlide.classList.remove('fade-out');
+          const newSlideIndex = this.currentPage - 1;
+          const newSlide = slides[newSlideIndex];
+          if (newSlide) {
+            newSlide.classList.add('fade-in');
+            setTimeout(() => {
+              newSlide.classList.remove('fade-in');
+            }, 1500);
+          }
+        }, 100);
+      }, 200);
+    } else {
+      super.onButtonClick(event);
+      this.wasClicked = true;
+
+      const isFirstSlide = this.currentPage === 1;
+      const isLastSlide = this.currentPage === this.sliderItemsToShow.length;
+
+      if (!isFirstSlide && !isLastSlide) {
+        this.applyAnimationToAnnouncementBar(event.currentTarget.name);
+        return;
+      }
+
+      if (isFirstSlide && event.currentTarget.name === 'previous') {
+        this.slideScrollPosition =
+          this.slider.scrollLeft + this.sliderFirstItemNode.clientWidth * this.sliderItemsToShow.length;
+      } else if (isLastSlide && event.currentTarget.name === 'next') {
+        this.slideScrollPosition = 0;
+      }
+
+      this.setSlidePosition(this.slideScrollPosition);
       this.applyAnimationToAnnouncementBar(event.currentTarget.name);
-      return;
     }
-
-    if (isFirstSlide && event.currentTarget.name === 'previous') {
-      this.slideScrollPosition =
-        this.slider.scrollLeft + this.sliderFirstItemNode.clientWidth * this.sliderItemsToShow.length;
-    } else if (isLastSlide && event.currentTarget.name === 'next') {
-      this.slideScrollPosition = 0;
-    }
-
-    this.setSlidePosition(this.slideScrollPosition);
-
-    this.applyAnimationToAnnouncementBar(event.currentTarget.name);
   }
 
   setSlidePosition(position) {
@@ -986,11 +1032,39 @@ class SlideshowComponent extends SliderComponent {
   }
 
   autoRotateSlides() {
-    const slideScrollPosition =
-      this.currentPage === this.sliderItems.length ? 0 : this.slider.scrollLeft + this.sliderItemOffset;
+    // Add fade effect for auto rotation
+    const slides = this.slider.querySelectorAll('.slideshow__slide');
+    const currentSlideIndex = this.currentPage - 1;
+    const currentSlide = slides[currentSlideIndex];
+    const nextIndex = this.currentPage === this.sliderItems.length ? 0 : this.currentPage;
+    const nextSlide = slides[nextIndex];
+    
+    if (currentSlide && nextSlide && !this.announcementBarSlider) {
+      currentSlide.classList.add('fade-out');
+      
+      setTimeout(() => {
+        const slideScrollPosition =
+          this.currentPage === this.sliderItems.length ? 0 : this.slider.scrollLeft + this.sliderItemOffset;
 
-    this.setSlidePosition(slideScrollPosition);
-    this.applyAnimationToAnnouncementBar();
+        this.setSlidePosition(slideScrollPosition);
+        this.applyAnimationToAnnouncementBar();
+        
+        setTimeout(() => {
+          currentSlide.classList.remove('fade-out');
+          nextSlide.classList.add('fade-in');
+          
+          setTimeout(() => {
+            nextSlide.classList.remove('fade-in');
+          }, 1500);
+        }, 100);
+      }, 200);
+    } else {
+      const slideScrollPosition =
+        this.currentPage === this.sliderItems.length ? 0 : this.slider.scrollLeft + this.sliderItemOffset;
+
+      this.setSlidePosition(slideScrollPosition);
+      this.applyAnimationToAnnouncementBar();
+    }
   }
 
   setSlideVisibility(event) {
@@ -1048,13 +1122,44 @@ class SlideshowComponent extends SliderComponent {
 
   linkToSlide(event) {
     event.preventDefault();
-    const slideScrollPosition =
-      this.slider.scrollLeft +
-      this.sliderFirstItemNode.clientWidth *
-        (this.sliderControlLinksArray.indexOf(event.currentTarget) + 1 - this.currentPage);
-    this.slider.scrollTo({
-      left: slideScrollPosition,
-    });
+    
+    // Add fade effect to slides
+    const currentSlideIndex = this.currentPage - 1;
+    const targetIndex = this.sliderControlLinksArray.indexOf(event.currentTarget);
+    const slides = this.slider.querySelectorAll('.slideshow__slide');
+    const currentSlide = slides[currentSlideIndex];
+    const nextSlide = slides[targetIndex];
+    
+    if (currentSlide && nextSlide && currentSlide !== nextSlide && !this.announcementBarSlider) {
+      currentSlide.classList.add('fade-out');
+      
+      setTimeout(() => {
+        const slideScrollPosition =
+          this.slider.scrollLeft +
+          this.sliderFirstItemNode.clientWidth *
+            (this.sliderControlLinksArray.indexOf(event.currentTarget) + 1 - this.currentPage);
+        this.slider.scrollTo({
+          left: slideScrollPosition,
+        });
+        
+        setTimeout(() => {
+          currentSlide.classList.remove('fade-out');
+          nextSlide.classList.add('fade-in');
+          
+          setTimeout(() => {
+            nextSlide.classList.remove('fade-in');
+          }, 1500);
+        }, 100);
+      }, 200);
+    } else {
+      const slideScrollPosition =
+        this.slider.scrollLeft +
+        this.sliderFirstItemNode.clientWidth *
+          (this.sliderControlLinksArray.indexOf(event.currentTarget) + 1 - this.currentPage);
+      this.slider.scrollTo({
+        left: slideScrollPosition,
+      });
+    }
   }
 }
 

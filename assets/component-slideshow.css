@@ -18,6 +18,26 @@ slideshow-component .slideshow.banner {
   display: flex;
   flex-direction: column;
   visibility: visible;
+  opacity: 1;
+  transition: opacity 1.5s ease-in-out;
+}
+
+/* Fade animation for slides */
+.slideshow__slide.fade-out {
+  opacity: 0;
+}
+
+.slideshow__slide.fade-in {
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @media screen and (max-width: 749px) {
