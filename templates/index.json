@@ -60,6 +60,7 @@
           "type": "spare_parts",
           "settings": {
             "title": "Spare Parts",
+            "title_arabic": "قطع غيار",
             "link": ""
           }
         },
@@ -67,6 +68,7 @@
           "type": "accessories",
           "settings": {
             "title": "Accessories",
+            "title_arabic": "اكسسوارات",
             "link": ""
           }
         },
@@ -74,6 +76,7 @@
           "type": "offers",
           "settings": {
             "title": "Offers",
+            "title_arabic": "عروض",
             "link": ""
           }
         },
@@ -81,6 +84,7 @@
           "type": "maintenance",
           "settings": {
             "title": "Regular maintenance offers",
+            "title_arabic": "عروض الصيانة الدورية",
             "link": ""
           }
         },
@@ -88,6 +92,7 @@
           "type": "car_care",
           "settings": {
             "title": "CAR CARE",
+            "title_arabic": "العناية بالسيارة",
             "link": ""
           }
         },
@@ -95,6 +100,7 @@
           "type": "oils",
           "settings": {
             "title": "Oils",
+            "title_arabic": "زيوت",
             "link": ""
           }
         },
@@ -102,6 +108,7 @@
           "type": "tires",
           "settings": {
             "title": "TIRES",
+            "title_arabic": "إطارات",
             "link": ""
           }
         },
@@ -109,6 +116,7 @@
           "type": "floor_covering",
           "settings": {
             "title": "Floor covering",
+            "title_arabic": "أرضيات السيارة",
             "link": ""
           }
         }
@@ -125,7 +133,8 @@
       ],
       "name": "Marketplace Categories",
       "settings": {
-        "title": "Marketplace Categories"
+        "title": "Marketplace Categories",
+        "title_arabic": "فئات السوق"
       }
     },
     "rich_text": {
@@ -181,7 +190,7 @@
         "show_rating": false,
         "quick_add": "none",
         "columns_mobile": "2",
-        "swipe_on_mobile": false,
+        "swipe_on_mobile": true,
         "padding_top": 28,
         "padding_bottom": 36
       }
