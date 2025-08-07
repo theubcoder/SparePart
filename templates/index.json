@@ -53,6 +53,81 @@
         "show_dots": true
       }
     },
+    "marketplace_categories_EJkkcL": {
+      "type": "marketplace-categories",
+      "blocks": {
+        "spare_parts_FkYJca": {
+          "type": "spare_parts",
+          "settings": {
+            "title": "Spare Parts",
+            "link": ""
+          }
+        },
+        "accessories_PPKkbY": {
+          "type": "accessories",
+          "settings": {
+            "title": "Accessories",
+            "link": ""
+          }
+        },
+        "offers_mPyKQU": {
+          "type": "offers",
+          "settings": {
+            "title": "Offers",
+            "link": ""
+          }
+        },
+        "maintenance_ngw7zF": {
+          "type": "maintenance",
+          "settings": {
+            "title": "Regular maintenance offers",
+            "link": ""
+          }
+        },
+        "car_care_kdtEBf": {
+          "type": "car_care",
+          "settings": {
+            "title": "CAR CARE",
+            "link": ""
+          }
+        },
+        "oils_UWdVzV": {
+          "type": "oils",
+          "settings": {
+            "title": "Oils",
+            "link": ""
+          }
+        },
+        "tires_TTBWWb": {
+          "type": "tires",
+          "settings": {
+            "title": "TIRES",
+            "link": ""
+          }
+        },
+        "floor_covering_UHA667": {
+          "type": "floor_covering",
+          "settings": {
+            "title": "Floor covering",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "spare_parts_FkYJca",
+        "accessories_PPKkbY",
+        "offers_mPyKQU",
+        "maintenance_ngw7zF",
+        "car_care_kdtEBf",
+        "oils_UWdVzV",
+        "tires_TTBWWb",
+        "floor_covering_UHA667"
+      ],
+      "name": "Marketplace Categories",
+      "settings": {
+        "title": "Marketplace Categories"
+      }
+    },
     "rich_text": {
       "type": "rich-text",
       "blocks": {
@@ -220,6 +295,7 @@
   },
   "order": [
     "banner_slider",
+    "marketplace_categories_EJkkcL",
     "rich_text",
     "featured_collection",
     "collage",
