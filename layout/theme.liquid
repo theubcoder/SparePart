@@ -1,5 +1,11 @@
 <!doctype html>
-<html class="js" lang="{{ request.locale.iso_code }}"{% if request.locale.iso_code == 'ar' %} dir="rtl"{% endif %}>
+<html
+  class="js"
+  lang="{{ request.locale.iso_code }}"
+  {% if request.locale.iso_code == 'ar' %}
+    dir="rtl"
+  {% endif %}
+>
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -246,6 +252,7 @@
         font-family: var(--font-body-family);
         font-style: var(--font-body-style);
         font-weight: var(--font-body-weight);
+        min-width: 992px;
       }
 
       @media screen and (min-width: 750px) {
